@@ -1,0 +1,36 @@
+.container {
+  padding: 8px;
+  box-shadow: 3px 3px 11px 3px rgb(0, 0, 0, 32%);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.item {
+  margin: 0 auto;
+}
+
+.header {
+  /* background-color: greenyellow; */
+  max-width: 1000px;
+  color: royalblue;
+  height: auto;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ul {
+  display: flex;
+  gap: 30px;
+  margin-right: 30px;
+}
+
+.logo {
+  margin-right: auto;
+  font-size: 2rem;
+}

@@ -1,0 +1,12 @@
+.container {
+  align-content: center;
+}
+
+.content {
+  max-width: 1400px;
+  height: 100%;
+  margin: auto;
+}
+.testing {
+  color: bisque;
+}
