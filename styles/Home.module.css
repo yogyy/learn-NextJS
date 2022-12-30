@@ -1,0 +1,12 @@
+.content {
+  height: 100vh;
+  margin: 20px;
+}
+
+.textgrad {
+  background: linear-gradient(90deg, royalblue, deeppink);
+  text-transform: uppercase;
+  font-weight: bold;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

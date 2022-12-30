@@ -14,7 +14,7 @@ export default function Layout(props: LayoutProps) {
   return (
     <>
       <Head>
-        <title>NextJS Basic | {pageTitle}</title>
+        <title> {`${pageTitle} - NextJS Basic`}</title>
         <meta name="description" content="website NextJS Basic" />
       </Head>
       <div className={styles.container}>

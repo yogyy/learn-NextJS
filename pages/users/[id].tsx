@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import React from "react";
 import Layout from "../../components/Layout";
 import styles from "../../styles/Users.module.css";
 
@@ -16,10 +15,18 @@ interface UserDetailProps {
 
 export default function UserDetail(props: UserDetailProps) {
   const router = useRouter();
-  // const { id } = router.query;
   const { user } = props;
+
+  if (router.isFallback) {
+    return (
+      <div className={styles.loadingcontainer}>
+        <p className={styles.loadinp}>Loading...</p>
+      </div>
+    );
+  }
+
   return (
-    <Layout pageTitle={`User details ${user.name}`}>
+    <Layout pageTitle={`${user.name}`}>
       <div className={styles.card}>
         <p>{user.name}</p>
         <p>{user.email}</p>
@@ -31,7 +38,9 @@ export default function UserDetail(props: UserDetailProps) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const res = await fetch(
+    "https://jsonplaceholder.typicode.com/users?_limit=5"
+  );
   const dataUsers = await res.json();
 
   const paths = dataUsers.map((user: User) => ({
@@ -41,7 +50,7 @@ export async function getStaticPaths() {
   }));
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -54,6 +63,12 @@ export async function getStaticProps(context: GetStaticProps) {
   const { id } = context.params;
   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
   const user = await res.json();
+
+  if (!user.id) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

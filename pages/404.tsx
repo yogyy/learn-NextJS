@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import useRouter from "next/router";
 import React, { useEffect } from "react";
 
 export default function Custom404() {
-  const router = useRouter();
+  const router = useRouter;
   useEffect(() => {
     setTimeout(() => {
       router.push("/");

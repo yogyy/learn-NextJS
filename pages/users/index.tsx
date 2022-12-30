@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import React from "react";
 import Layout from "../../components/Layout";
 import styles from "../../styles/Users.module.css";
 
@@ -12,7 +11,7 @@ export default function Users(props: UserProps) {
   const router = useRouter();
 
   return (
-    <Layout pageTitle="Users Page">
+    <Layout pageTitle={"Users Page"}>
       {dataUsers.map((user) => (
         // return (
         <div
