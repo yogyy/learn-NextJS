@@ -1,3 +1,4 @@
+// import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import styles from "../../styles/Users.module.css";
@@ -11,7 +12,7 @@ export default function Users(props: UserProps) {
   const router = useRouter();
 
   return (
-    <Layout pageTitle={"Users Page"}>
+    <Layout pageTitle={`Users List Page`}>
       {dataUsers.map((user) => (
         // return (
         <div
@@ -19,8 +20,10 @@ export default function Users(props: UserProps) {
           key={user.id}
           onClick={() => router.push(`/users/${user.id}`)}
         >
+          {/* <Link href={`users/${user.id}`}> */}
           <p>{user.name}</p>
           <p>{user.email}</p>
+          {/* </Link> */}
         </div>
         // );
       ))}
