@@ -28,10 +28,10 @@ export default function Home() {
           memastikan bahwa situs web yang saya kembangkan selalu menggunakan
           teknologi terbaru dan terbaik
         </p>
-        <div>
+        {/* <div>
           <button onClick={handleOrder}>place order</button>
           <Link href={"/posts"}>post page</Link>
-        </div>
+        </div> */}
       </div>
       {/* <Image src={"/iamge1.webp"} alt={"gambar1"} width={700} height={400} /> */}
     </Layout>
