@@ -1,14 +1,14 @@
-import Link from "next/link";
-import styles from "./Header.module.css";
+import Link from 'next/link';
+import styles from './Header.module.css';
 
 export default function Header() {
   return (
-    <div>
-      <header className={styles.header}>
+    <div className={styles.container}>
+      <nav className={styles.header}>
         <p className={styles.logo}>
           <Link href="/">yogyCons't</Link>
         </p>
-        <ul className={styles.ul} id="navbar">
+        <ul className={styles.ul}>
           <li className={styles.list}>
             <Link className={styles.item} href="/">
               Home
@@ -20,12 +20,17 @@ export default function Header() {
             </Link>
           </li>
           <li className={styles.list}>
-            <Link className={styles.item} href={"/users"}>
+            <Link className={styles.item} href={'/users'}>
               Users
             </Link>
           </li>
+          <li className={styles.list}>
+            <Link className={styles.item} href={'/product'}>
+              Product
+            </Link>
+          </li>
         </ul>
-      </header>
+      </nav>
     </div>
   );
 }

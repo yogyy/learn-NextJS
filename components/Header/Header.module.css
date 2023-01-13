@@ -1,6 +1,22 @@
 .container {
-  padding: 8px;
+  position: relative;
+  width: 100%;
+  display: block;
+  position: fixed;
+  background-color: rgb(0, 0, 0, 30%);
   box-shadow: 3px 3px 11px 3px rgb(0, 0, 0, 32%);
+  z-index: 2;
+}
+
+.header {
+  /* min-width: 400px; */
+  max-width: 1400px;
+  color: royalblue;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  height: 85px;
 }
 
 .list {
@@ -12,37 +28,23 @@
 .item {
   margin: 0 auto;
 }
-
-.header {
-  /* background-color: greenyellow; */
-  min-width: 400px;
-  max-width: 1000px;
-  color: royalblue;
-  height: auto;
-  margin: auto;
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-}
-
 .ul {
   display: flex;
   gap: 30px;
   margin-right: 30px;
 }
-
 .logo {
   margin-right: auto;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: deeppink;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
-/* @media screen and(max-width: 500px) {
-  .header {
-    background: #000;
+@media (max-width: 500px) {
+  .logo {
+    font-size: 1.5rem;
   }
-  Link {
+  .ul {
     display: none;
   }
-} */
+}

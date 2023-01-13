@@ -1,12 +1,35 @@
+.content,
+.content1 {
+  align-items: center;
+  display: flex;
+}
+
 .content {
-  height: 100vh;
-  margin: 20px;
+  min-height: 120vh;
+  justify-content: space-evenly;
+}
+.content1 {
+  height: 50vh;
+  margin: 0 40px;
+}
+.hero {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 50px;
 }
 
 .textgrad {
-  background: linear-gradient(90deg, royalblue, deeppink);
-  text-transform: uppercase;
-  font-weight: bold;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #f1f7b5;
+}
+.namafull {
+  color: #f1f7b5;
+}
+.name {
+  font-size: 4rem;
+}
+@media (max-width: 600px) {
+  .content {
+    display: flex;
+  }
 }

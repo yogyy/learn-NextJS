@@ -1,7 +1,10 @@
+.div {
+  padding-top: 90px;
+}
 .card {
+  min-width: 400px;
   padding: 16px;
-  box-shadow: 6px 5px 19px rgba(255, 20, 147, 0.34);
-
+  box-shadow: 6px 5px 19px rgba(197, 5, 107, 0.34);
   border-radius: 12px;
-  margin: 18px;
+  margin: auto;
 }

@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
-import Layout from "../../components/Layout";
-import styles from "../../styles/Users.module.css";
+import {useRouter} from 'next/router';
+import Layout from '../../components/Layout';
+import styles from '../../styles/Users.module.css';
 
 interface User {
   id: number;
@@ -15,7 +15,7 @@ interface UserDetailProps {
 
 export default function UserDetail(props: UserDetailProps) {
   const router = useRouter();
-  const { user } = props;
+  const {user} = props;
 
   if (router.isFallback) {
     return (
@@ -38,9 +38,7 @@ export default function UserDetail(props: UserDetailProps) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(
-    "https://jsonplaceholder.typicode.com/users?_limit=5"
-  );
+  const res = await fetch('https://jsonplaceholder.typicode.com/users?_limit=5');
   const dataUsers = await res.json();
 
   const paths = dataUsers.map((user: User) => ({
@@ -60,10 +58,8 @@ interface GetStaticProps {
   };
 }
 export async function getStaticProps(context: GetStaticProps) {
-  const { userId } = context.params;
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/users/${userId}`
-  );
+  const {userId} = context.params;
+  const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
   const user = await res.json();
 
   if (!user.id) {

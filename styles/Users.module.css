@@ -1,3 +1,6 @@
+.div {
+  padding-top: 90px;
+}
 .card {
   flex-wrap: wrap;
   padding: 16px;
@@ -12,5 +15,5 @@
   align-items: center;
   color: deeppink;
   font-size: 5em;
-  height: 100vh;
+  height: 100%;
 }

@@ -1,37 +1,51 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import Layout from "../components/Layout";
-import styles from "../styles/Home.module.css";
+import Image from 'next/image';
+import Layout from '../components/Layout';
+import styles from '../styles/Home.module.css';
+import pic from '../public/pic.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import {useEffect} from 'react';
 
 export default function Home() {
-  const router = useRouter();
+  useEffect(() => {
+    AOS.init({
+      once: false,
+      duration: 1200,
+    });
+    window.scrollTo(0, 0);
+  }, []);
 
-  const handleOrder = () => {
-    router.replace("/product");
-  };
   return (
-    <Layout pageTitle={"Home Page"}>
+    <Layout pageTitle={'yogyy'}>
       <div className={styles.content}>
-        <h1>Hi, i'm Muhammad Yogi Firman Syah</h1>
+        <section className={styles.hero}>
+          <Image
+            width={300}
+            height={300}
+            src={pic}
+            alt={"it's me"}
+            priority
+            data-aos="fade-right"
+          />
+          <div className="name" data-aos="fade-left">
+            <h1>Hello \∘</h1>
+            <p>
+              My name is <span className={styles.namafull}>Muhammad Yogi Firman Syah</span>, <br />
+              i'm a <span className={styles.textgrad}>Frontend</span> Developer.
+              <br />
+              <i>maybe..</i>
+            </p>
+          </div>
+        </section>
+      </div>
+      <div className={styles.content1} data-aos="flip-up">
         <p>
-          I'm a <span className={styles.textgrad}>Frontend</span> Developer
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa quos blanditiis
+          repellendus aliquam eveniet, reprehenderit maxime voluptates? Quisquam iusto et saepe
+          illum fuga culpa adipisci impedit. Hic dolor doloremque commodi porro vitae ab veniam!
+          Cupiditate quod cum nobis dolorum inventore. Totam nobis id tempora repellat quia qui vero
+          ipsum dolores.
         </p>
-        <p>
-          Saya adalah seorang website developer yang memiliki kemampuan dalam
-          membuat dan mengembangkan situs web yang fungsional dan berkualitas.
-          Saya memiliki pengalaman dalam menggunakan berbagai bahasa pemrograman
-          seperti <span className={styles.textgrad}>HTML, CSS, JavaScript</span>
-          , dan serta framework React seperti NextJS. Saya juga memiliki
-          kemampuan dalam menggunakan alat seperti Git, GitHub, dan command line
-          untuk mengelola proyek dan mengelola versi kode sumber. Saya senang
-          belajar dan selalu terbuka untuk mencoba teknologi baru untuk
-          memastikan bahwa situs web yang saya kembangkan selalu menggunakan
-          teknologi terbaru dan terbaik
-        </p>
-        {/* <div>
-          <button onClick={handleOrder}>place order</button>
-          <Link href={"/posts"}>post page</Link>
-        </div> */}
       </div>
       {/* <Image src={"/iamge1.webp"} alt={"gambar1"} width={700} height={400} /> */}
     </Layout>
