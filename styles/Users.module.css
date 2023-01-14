@@ -6,7 +6,8 @@
   padding: 16px;
   box-shadow: 6px 5px 19px rgba(255, 20, 147, 0.34);
   border-radius: 12px;
-  margin: 18px;
+  margin: 20px;
+  width: 100%;
 }
 
 .loadingcontainer {
@@ -16,4 +17,11 @@
   color: deeppink;
   font-size: 5em;
   height: 100%;
+}
+.useridcontent {
+  padding-top: 90px;
+  height: 100vh;
+}
+.userdetail {
+  display: flex;
 }
