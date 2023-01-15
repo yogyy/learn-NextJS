@@ -5,18 +5,40 @@
 }
 
 .content {
-  min-height: 120vh;
   justify-content: space-evenly;
+  height: 100vh;
 }
 .content1 {
-  height: 50vh;
+  height: 100vh;
+  flex-direction: column;
+  height: auto;
+  gap: 50px;
+}
+.c1 {
+  margin-top: 40px;
+  max-width: 50vh;
   margin: 0 40px;
+  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+}
+
+.komok {
+  width: 300px;
+  /* height: 50vh; */
+}
+.name {
+  /* height: 100%; */
+  margin-bottom: 50px;
 }
 .hero {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 50px;
+  min-width: 300px;
+  height: 300px;
 }
 
 .textgrad {
@@ -25,9 +47,11 @@
 .namafull {
   color: #f1f7b5;
 }
-.name {
-  font-size: 4rem;
+
+.c2 {
+  height: 50vh;
 }
+
 @media (max-width: 600px) {
   .content {
     display: flex;
