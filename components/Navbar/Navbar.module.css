@@ -12,11 +12,21 @@
 .ul {
   list-style-type: none;
   position: fixed;
+  display: flex;
+  flex-direction: column;
 }
 
 .ul > li {
   display: inline-block;
-  width: 40px;
+  width: 43px;
+}
+
+.logo {
+  filter: grayscale(60%);
+}
+.logo:hover,
+.logo:active {
+  filter: grayscale(0%);
 }
 
 @media (max-width: 768px) {

@@ -11,18 +11,18 @@ export default function Navbar() {
     <div className={styles.nav}>
       <ul className={styles.ul}>
         <li data-aos="fade-up" data-aos-duration="8000">
-          <Link href={'/'}>
-            <Image width={35} height={35} src={fb} alt={'facebook'} />
+          <Link href={'https://www.facebook.com/iogiy'} target="_blank">
+            <Image className={styles.logo} width={35} height={35} src={fb} alt={'facebook'} />
           </Link>
         </li>
         <li data-aos="fade-up" data-aos-duration="4000">
           <Link href={'/'}>
-            <Image width={35} height={35} src={li} alt={'github'} />
+            <Image className={styles.logo} width={35} height={35} src={li} alt={'linkedin'} />
           </Link>
         </li>
         <li data-aos="fade-up" data-aos-duration="2000">
           <Link href={'https://github.com/yogyy'} target="_blank">
-            <Image width={35} height={35} src={gh} alt={'github'} />
+            <Image className={styles.logo} width={35} height={35} src={gh} alt={'github'} />
           </Link>
         </li>
       </ul>
