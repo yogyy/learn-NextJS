@@ -12,23 +12,17 @@
   --light-navy: #172a45;
 }
 
-* {
-  box-sizing: border-box;
-}
-html,
-body {
+body,
+html {
   padding: 0;
   margin: 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
     Verdana, sans-serif;
-  margin: auto;
-  height: 100%;
   background-color: var(--navy);
   color: #a8b2d1;
-}
-body {
   overflow-x: hidden;
 }
+
 a {
   color: inherit;
   text-decoration: none;
