@@ -27,11 +27,15 @@ export default function UserDetail(props: UserDetailProps) {
 
   return (
     <Layout pageTitle={`${user.name}`}>
-      <div className={styles.card}>
-        <p>{user.name}</p>
-        <p>{user.email}</p>
-        <p>{user.phone}</p>
-        <p>{user.website}</p>
+      <div className={styles.useridcontent}>
+        <div className={styles.div}>
+          <div className={styles.card}>
+            <p>{user.name}</p>
+            <p>{user.email}</p>
+            <p>{user.phone}</p>
+            <p>{user.website}</p>
+          </div>
+        </div>
       </div>
     </Layout>
   );

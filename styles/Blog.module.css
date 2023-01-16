@@ -1,5 +1,7 @@
 .div {
   padding-top: 90px;
+  width: 80%;
+  margin: auto;
 }
 .div h1 {
   display: flex;
@@ -9,7 +11,13 @@
 }
 .card {
   padding: 16px;
-  box-shadow: 6px 5px 19px rgba(197, 5, 107, 0.34);
   border-radius: 12px;
   margin: 20px;
+  background: transparent;
+  border: 2px solid #c5056b57;
+  align-items: center;
+  color: #e8e8e8;
+}
+.card:hover {
+  box-shadow: 5px 5px 15px #c5056b57 inset;
 }
