@@ -2,16 +2,16 @@ import Head from 'next/head';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import React, {useEffect} from 'react';
-import Layout from '../components/Layout';
 import styles from '../styles/404.module.css';
 
 export default function Custom404() {
   const router = useRouter();
   useEffect(() => {
+    console.log('not found 404');
     setTimeout(() => {
       router.push('/');
-      console.log('not found 404');
     }, 5500);
+    return () => console.log('dari 404');
   }, []);
 
   return (

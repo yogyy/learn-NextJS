@@ -18,6 +18,11 @@
   flex: auto;
 }
 
+.h1:hover,
+.h1:active {
+  color: deepskyblue;
+}
+
 @media (max-width: 700px) {
   .h1 {
     font-size: 70px;
