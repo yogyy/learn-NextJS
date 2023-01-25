@@ -1,0 +1,36 @@
+.nav {
+  position: fixed;
+  width: 30px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  outline: 2px black dashed;
+}
+
+.ul {
+  list-style-type: none;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+.ul > li {
+  display: inline-block;
+  width: 43px;
+}
+
+.logo {
+  filter: grayscale(60%);
+}
+.logo:hover,
+.logo:active {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
