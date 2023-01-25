@@ -74,6 +74,15 @@
   color: #020c1b;
 }
 
+.bottomm {
+  text-align: center;
+  padding: 20px;
+  background: rgb(0, 0, 0, 0.5);
+}
+/* style={{textAlign: 'center', 
+  padding: '20px', 
+  background: 'rgb(0,0,0, .5)'}} */
+
 @media (max-width: 700px) {
   .ul {
     gap: 15px;
