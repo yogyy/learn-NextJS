@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Layout from '../components/Layout';
 import styles from '../styles/Home.module.css';
-import pic from '../public/pic.png';
+import pic from '../public/me.webp';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {useEffect} from 'react';
@@ -15,39 +15,49 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
+  const fullName = 'Muhammad Yogi Firman Syah';
   return (
     <Layout pageTitle={'yogyy'}>
       <div className={styles.content}>
-        <section className={styles.hero}>
-          <Image
-            width={300}
-            height={300}
-            src={pic}
-            alt={"it's me"}
-            priority
-            data-aos="fade-right"
-          />
-          <div className="name" data-aos="fade-left">
-            <h1>Hello \∘</h1>
-            <p>
-              My name is <span className={styles.namafull}>Muhammad Yogi Firman Syah</span>, <br />
-              i'm a <span className={styles.textgrad}>Frontend</span> Developer.
-              <br />
-              <i>maybe..</i>
-            </p>
+        <div className={styles.content_intro}>
+          <div className={styles.bungkusImg}>
+            <Image
+              className={styles.img}
+              src={pic}
+              alt={'me'}
+              style={{
+                maxWidth: '100% ',
+                height: 'auto',
+                borderRadius: '50%',
+                display: 'flex',
+                border: '2px white solid',
+              }}
+            />
           </div>
-        </section>
+          <div className={styles.intro}>
+            <h1>hello \∘</h1>
+            <h2>
+              I'm <span className={styles.fullname}>yogyy</span>
+            </h2>
+            <h3>i'm a Front End Web Dev</h3>
+          </div>
+        </div>
       </div>
-      <div className={styles.content1} data-aos="flip-up">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa quos blanditiis
-          repellendus aliquam eveniet, reprehenderit maxime voluptates? Quisquam iusto et saepe
-          illum fuga culpa adipisci impedit. Hic dolor doloremque commodi porro vitae ab veniam!
-          Cupiditate quod cum nobis dolorum inventore. Totam nobis id tempora repellat quia qui vero
-          ipsum dolores.
-        </p>
+      <div className={styles.content1}>
+        <div className={styles.about}>
+          <h1>About ☁</h1>
+          <p>
+            Hello, my name is {fullName}, I'm 20 years old now , I started my web-development
+            journey in 2021 when I took a year off after high school. At that time, I was learning
+            by doing, I know a lot about the fundamentals of web development, and the most important
+            thing is I got a new burning passion to this day.
+          </p>
+          <p>
+            Fast forward to today, I'm still enjoying upgrading my new skills, learning up-to-date
+            new tech stack, and I make sure that I've learned the fundamentals before.
+          </p>
+        </div>
       </div>
-      {/* <Image src={"/iamge1.webp"} alt={"gambar1"} width={700} height={400} /> */}
     </Layout>
   );
 }

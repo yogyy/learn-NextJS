@@ -1,59 +1,54 @@
-.content,
-.content1 {
-  align-items: center;
-  display: flex;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 .content {
-  justify-content: space-evenly;
+  /* padding-top: 80px; */
+  /* background: #000; */
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  margin: auto;
   height: 100vh;
 }
 .content1 {
-  height: 100vh;
-  flex-direction: column;
-  height: auto;
-  gap: 50px;
+  /* background: blueviolet; */
+  max-width: 80%;
+  margin: auto;
+  display: flex;
 }
-.c1 {
-  margin-top: 40px;
-  max-width: 50vh;
-  margin: 0 40px;
-  text-align: center;
-  justify-content: flex-end;
+
+.content_intro {
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  /* margin-top: 20px; */
   align-items: center;
+  /* justify-content: center; */
+  /* flex-wrap: wrap; */
+  font-family: 'Nunito', sans-serif;
+  gap: 40px;
+  height: 400px;
+}
+
+.bungkusImg {
   display: flex;
+  width: 192px;
+  margin: auto;
 }
 
-.komok {
-  width: 300px;
-  /* height: 50vh; */
+.fullname {
+  color: #0081c9;
 }
-.name {
-  /* height: 100%; */
-  margin-bottom: 50px;
-}
-.hero {
+
+.about {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap: 50px;
-  min-width: 300px;
-  height: 300px;
-}
-
-.textgrad {
-  color: #f1f7b5;
-}
-.namafull {
-  color: #f1f7b5;
-}
-
-.c2 {
-  height: 50vh;
+  min-height: 50vh;
+  flex-direction: column;
+  max-height: 100%;
 }
 
 @media (max-width: 600px) {
-  .content {
+  .content_intro {
     display: flex;
+    flex-direction: column;
   }
 }
