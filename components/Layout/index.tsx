@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React, {ReactNode} from 'react';
 import Footer from '../Footer';
-import Header from '../Header';
 import Navbar from '../Navbar';
+import Sidebar from '../Sidebar';
 import styles from './Layout.module.css';
 
 interface LayoutProps {
@@ -19,12 +19,12 @@ export default function Layout(props: LayoutProps) {
         <title>{`${pageTitle}`}</title>
         <meta name="description" content="website NextJS Basic" />
       </Head>
-      <Navbar />
-      <Header />
+      <Sidebar />
       <div className={styles.cont}>
+        <Navbar />
         <main className={styles.content}>{children}</main>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }
