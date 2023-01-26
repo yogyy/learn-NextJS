@@ -10,10 +10,10 @@
   height: 100vh;
 }
 .content1 {
-  /* background: blueviolet; */
   max-width: 80%;
   margin: auto;
   display: flex;
+  flex-direction: column;
 }
 
 .content_intro {
@@ -30,7 +30,6 @@
 }
 
 .bungkusImg {
-  display: flex;
   width: 192px;
   margin: auto;
 }
@@ -41,14 +40,157 @@
 
 .about {
   display: flex;
-  min-height: 50vh;
   flex-direction: column;
   max-height: 100%;
+  margin-bottom: 30px;
+}
+.education {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 100px auto;
+  min-width: 90%;
+  height: auto;
+  gap: 50px;
+}
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2.5px;
+  height: 100%;
+  background: rgba(0, 0, 0, 40%);
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: 1;
+  animation: moveline 5s linear forwards;
+}
+
+@keyframes moveline {
+  0% {
+    height: 1%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+.container {
+  padding: 10px 50px;
+  position: relative;
+  width: 40%;
+}
+.container .titik {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  right: -15px;
+  top: 40px;
+  z-index: 3;
+}
+.right .titik {
+  left: -16.5px;
+}
+.left {
+  margin-right: auto;
+}
+.lefts1 {
+  display: none;
+}
+.right {
+  margin-left: auto;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  margin: 0 20px;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #0081c9;
+}
+.text small {
+  margin-bottom: 15px;
+}
+.leftArrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid rgba(0, 0, 0, 0.5);
+  right: -15px;
+}
+.rightArrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid rgba(0, 0, 0, 0.5);
+  left: -15px;
 }
 
 @media (max-width: 600px) {
   .content_intro {
     display: flex;
     flex-direction: column;
+  }
+  .timeline {
+    margin: 30px auto;
+  }
+  .timeline::after {
+    left: 31px;
+  }
+  .container {
+    width: 90%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  .text {
+    /* display: flex; */
+    font-size: 12px;
+    width: 60%;
+    /* max-width: fit-content; */
+  }
+  .lefts1 {
+    display: block;
+  }
+  .lefts2 {
+    display: none;
+  }
+  .right {
+    margin-left: 0;
+  }
+
+  .leftArrow {
+    border-right: 15px solid rgba(0, 0, 0, 0.5);
+    border-left: 0;
+    left: -15px;
+  }
+  .right .titik {
+    left: 14px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1400px) {
+  .container .titik {
+    display: none;
   }
 }
