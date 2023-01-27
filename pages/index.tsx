@@ -5,6 +5,7 @@ import pic from '../public/me.webp';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {useEffect} from 'react';
+import {Porto} from '../components/Porto';
 
 export default function Home() {
   useEffect(() => {
@@ -15,32 +16,52 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
+  function ageCounter(birthdate: number | string) {
+    var today = new Date();
+    var birthDate = new Date(birthdate);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  }
+
   const fullName = 'Muhammad Yogi Firman Syah';
   return (
     <Layout pageTitle={'yogyy'}>
       <div className={styles.content}>
         <div className={styles.content_intro}>
-          <div data-aos="zoom-in" className={styles.bungkusImg}>
-            <Image
-              className={styles.img}
-              src={pic}
-              alt={'me'}
-              priority
-              style={{
-                maxWidth: '100% ',
-                height: 'auto',
-                borderRadius: '50%',
-                display: 'flex',
-                border: '2px white solid',
-              }}
-            />
+          <div className={styles.test}>
+            <div data-aos="zoom-in" className={styles.bungkusImg}>
+              <Image
+                className={styles.img}
+                src={pic}
+                alt={'me'}
+                priority
+                style={{
+                  maxWidth: '100% ',
+                  height: 'auto',
+                  borderRadius: '50%',
+                  display: 'flex',
+                }}
+              />
+            </div>
           </div>
-          <div className={styles.intro}>
-            <h1>hello \∘</h1>
-            <h2>
+          <div
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className={styles.intro}>
+            <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="600">
+              hello \∘
+            </h1>
+            <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
               I'm <span className={styles.fullname}>yogyy</span>
             </h2>
-            <h3>i'm a Front End Web Dev</h3>
+            <h3 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1800">
+              i'm a Front End Web Dev
+            </h3>
           </div>
         </div>
       </div>
@@ -48,10 +69,10 @@ export default function Home() {
         <div className={styles.about}>
           <h1>About 🤷‍♂️</h1>
           <p>
-            Hello, my name is {fullName}, I'm 20 years old now , I started my web-development
-            journey in 2021 when I took a year off after high school. At that time, I was learning
-            by doing, I know a lot about the fundamentals of web development, and the most important
-            thing is I got a new burning passion to this day.
+            Hello, my name is {fullName}, I'm {ageCounter('2003-02-02')} years old now , I started
+            my web-development journey in 2021 when I took a year off after high school. At that
+            time, I was learning by doing, I know a lot about the fundamentals of web development,
+            and the most important thing is I got a new burning passion to this day.
           </p>
           <p>
             Fast forward to today, I'm still enjoying upgrading my new skills, learning up-to-date
@@ -64,7 +85,7 @@ export default function Home() {
             <div className={`${styles.container} ${styles.right}`}>
               <div className={styles.titik}>♦</div>
               <div data-aos="fade-left" className={styles.text}>
-                <h2>SMK N2 Kab. Tangerang</h2>
+                <h2>SMKN 2 Kab.Tangerang</h2>
                 <small>2019 - 2021</small>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <span className={styles.rightArrow}></span>
@@ -90,6 +111,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.porto}>
+        <Porto />
       </div>
     </Layout>
   );
