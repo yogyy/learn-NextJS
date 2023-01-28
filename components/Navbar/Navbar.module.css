@@ -11,7 +11,7 @@
 .header {
   /* min-width: 400px; */
   max-width: 1400px;
-  color: royalblue;
+  color: #0081c9;
   margin: 0 auto;
   align-items: center;
   display: flex;
@@ -36,13 +36,16 @@
 .logo {
   margin-right: auto;
   font-size: 1.5rem;
-  color: deeppink;
+  color: #0081c9;
   margin-left: 30px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+  .header {
+    height: 55px;
+  }
   .logo {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .ul {
     display: none;

@@ -24,11 +24,6 @@ export default function Navbar() {
               Users
             </Link>
           </li>
-          <li className={styles.list}>
-            <Link className={styles.item} href={'/product'}>
-              Product
-            </Link>
-          </li>
         </ul>
       </nav>
     </div>
