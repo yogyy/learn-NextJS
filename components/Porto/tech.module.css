@@ -1,0 +1,46 @@
+.tech {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  align-items: flex-start;
+  margin: auto;
+  width: 85%;
+  height: 50vh;
+}
+.ul_container {
+  margin: auto;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+}
+
+.ul {
+  list-style: none;
+  display: flex;
+  /* justify-content: flex-end; */
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.ul li {
+  display: inline-block;
+  background-color: transparent;
+  font-size: 1px;
+  padding: 1px;
+}
+
+.ul li:hover,
+.ul li:active {
+  animation: roll 3s both;
+  transform: rotate(30deg);
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
