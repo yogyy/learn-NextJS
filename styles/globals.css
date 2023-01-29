@@ -32,27 +32,6 @@ a {
   height: 100%;
 }
 
-.title_404 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: darkturquoise;
-  align-items: center;
-  height: 100vh;
-}
-
-.return_home {
-  background-color: darkturquoise;
-  padding: 5px;
-  border-radius: 5px;
-  color: royalblue;
-}
-
-.return_home:hover {
-  background-color: royalblue;
-  color: darkturquoise;
-}
-
 .button-89 {
   --b: 3px; /* border thickness */
   --s: 0.45em; /* size of the corner */
