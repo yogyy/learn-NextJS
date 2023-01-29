@@ -5,63 +5,66 @@ import pic from '../public/me.webp';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {useEffect} from 'react';
-import {Porto} from '../components/Porto';
+import {Porto} from '../components/Porto/porto';
+import {ageCounter} from '../components/countAge';
+import Typewriter from 'typewriter-effect';
+import {Tech} from '../components/Porto/tech';
 
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      once: false,
+      once: true,
       duration: 1200,
     });
     window.scrollTo(0, 0);
   }, []);
-
-  function ageCounter(birthdate: number | string) {
-    var today = new Date();
-    var birthDate = new Date(birthdate);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    return age;
-  }
 
   const fullName = 'Muhammad Yogi Firman Syah';
   return (
     <Layout pageTitle={'yogyy'}>
       <div className={styles.content}>
         <div className={styles.content_intro}>
-          <div className={styles.test}>
-            <div data-aos="zoom-in" className={styles.bungkusImg}>
-              <Image
-                className={styles.img}
-                src={pic}
-                alt={'me'}
-                priority
-                style={{
-                  maxWidth: '100% ',
-                  height: 'auto',
-                  borderRadius: '50%',
-                  display: 'flex',
-                }}
-              />
+          <div className={styles.imgContainer}>
+            <div data-aos="zoom-in" className={styles.test}>
+              <div className={styles.bungkusImg}>
+                <Image
+                  className={styles.img}
+                  src={pic}
+                  alt={'me'}
+                  priority
+                  style={{
+                    maxWidth: 'auto',
+                    height: 'auto',
+                    borderRadius: '50%',
+                    display: 'flex',
+                  }}
+                />
+              </div>
             </div>
           </div>
+
           <div
             data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1500"
             className={styles.intro}>
-            <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="600">
-              hello \∘
-            </h1>
-            <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
-              I'm <span className={styles.fullname}>yogyy</span>
-            </h2>
-            <h3 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1800">
-              i'm a Front End Web Dev
-            </h3>
+            <div className={styles.bungkusH1}>
+              <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="600">
+                hello <span className={styles.wave}>⋱</span>∘
+              </h1>
+            </div>
+            <div className={styles.bungkusFullname}>
+              I'm{' '}
+              <span className={styles.fullname}>
+                <Typewriter
+                  options={{
+                    strings: ['yogyy', 'a Frontend Engineer', 'a Web Developer'],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -87,7 +90,7 @@ export default function Home() {
               <div data-aos="fade-left" className={styles.text}>
                 <h2>SMKN 2 Kab.Tangerang</h2>
                 <small>2019 - 2021</small>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit.</p>
                 <span className={styles.rightArrow}></span>
               </div>
             </div>
@@ -96,7 +99,7 @@ export default function Home() {
               <div data-aos="fade-left" className={styles.text}>
                 <h2>Self Taught</h2>
                 <small>2021 - now</small>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet. </p>
                 <span className={styles.rightArrow}></span>
               </div>
             </div>
@@ -105,16 +108,18 @@ export default function Home() {
               <div data-aos="fade-right" className={styles.text}>
                 <h2>Self Taught</h2>
                 <small>2021 - now</small>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit</p>
                 <span className={styles.leftArrow}></span>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div className={styles.porto}>
         <Porto />
       </div>
+      <Tech />
     </Layout>
   );
 }

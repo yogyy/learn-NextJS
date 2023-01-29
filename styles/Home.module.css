@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 .content {
-  /* padding-top: 80px; */
-  /* background: #000; */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
+
 .content1 {
   max-width: 80%;
   margin: auto;
@@ -18,20 +17,50 @@
 
 .content_intro {
   display: flex;
-  /* margin-top: 20px; */
   align-items: center;
-  /* justify-content: center; */
-  /* flex-wrap: wrap; */
   font-family: 'Nunito', sans-serif;
-  /* gap: 50px; */
   height: 400px;
+  min-width: 1024px;
+  /* background: #000; */
 }
-
+/* .bgmiring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  height: 300px;
+  width: 100%;
+  position: 
+} */
+.img {
+  width: 190px;
+  height: auto;
+}
+.imgContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
 .bungkusImg {
-  width: 192px;
+  width: 95%;
   margin: auto;
 }
 
+.bungkusH1 {
+  font-size: 30px;
+  margin: 0 0 10px 0;
+  /*  style={{fontSize: '5rem', margin: '0', marginBottom: '3rem'}} */
+}
+.bungkusH1 h1 {
+  margin: 0;
+}
+.bungkusFullname {
+  display: flex;
+  flex-direction: row;
+  font-size: 2rem;
+  gap: 1rem;
+}
+/*  style={{display: 'flex', flexDirection: 'row', fontSize: '30px', gap: '1rem'}} */
 .test {
   width: 200px;
   height: 200px;
@@ -44,12 +73,13 @@
   align-items: center;
 }
 .test::before {
-  content: 'test';
+  content: '';
   background-image: conic-gradient(#0081c9 20deg, transparent 120deg);
   width: 100%;
   height: 100%;
   position: absolute;
   animation: rotate 5s linear infinite;
+  z-index: -1;
 }
 .test::after {
   width: 190px;
@@ -63,7 +93,6 @@
   color: #ff0052;
   font-size: larger;
   letter-spacing: 5px;
-  /* box-shadow: inset 20px 20px 20px #0000008c; */
 }
 
 @keyframes rotate {
@@ -77,10 +106,14 @@
 
 .intro {
   padding: 0 50px 0 50px;
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
 }
 
 .fullname {
   color: #0081c9;
+  font-weight: 600;
 }
 
 .about {
@@ -197,28 +230,59 @@
   margin: 50px 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .contents {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 40vh;
+    position: absolute;
+  }
   .content_intro {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
   }
 
+  .img {
+    display: flex;
+    margin: auto;
+    width: 151px;
+    height: 151px;
+  }
+  .test {
+    width: 160px;
+    height: 160px;
+  }
+
+  .bungkusH1 {
+    display: flex;
+    justify-content: flex-start;
+    min-width: none;
+    width: 300px;
+  }
+  .bungkusH1,
+  .bungkusFullname {
+    font-size: 1.5rem;
+  }
+  .intro {
+    padding-top: 50px;
+  }
   .timeline {
-    margin: 30px auto;
+    margin: 30px 0;
   }
   .timeline::after {
     left: 31px;
   }
   .container {
-    width: 90%;
-    padding-left: 70px;
-    padding-right: 25px;
+    width: 95%;
+    /* padding-left: 70px; */
+    /* padding-right: 25px; */
+    margin-right: 100px;
   }
   .text {
     /* display: flex; */
     font-size: 12px;
-    width: 60%;
+    width: auto;
     /* max-width: fit-content; */
   }
   .lefts1 {
@@ -241,8 +305,54 @@
   }
 }
 
-@media (min-width: 600px) and (max-width: 1400px) {
+@media (min-width: 601px) and (max-width: 1400px) {
   .container .titik {
     display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .timeline .container {
+    padding: 10px 60px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .imgContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
   }
 }
