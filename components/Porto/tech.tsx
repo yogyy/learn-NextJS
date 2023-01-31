@@ -1,51 +1,67 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import css from '../../public/tech/css.svg';
-import html from '../../public/tech/html.svg';
-import js from '../../public/tech/js.svg';
-import typescript from '../../public/tech/typescript.svg';
-import react from '../../public/tech/react.svg';
-import nextjs from '../../public/tech/nextjs.svg';
-
 import styles from './tech.module.css';
+import Logonextjs from '../tech/nextjs';
+import Logohtml from '../tech/html';
+import Logocss from '../tech/css';
+import Logojs from '../tech/js';
+import Logots from '../tech/ts';
+import Logoreact from '../tech/react';
+import {TailwindLogo} from '../tech/tailwind';
+import {LogoGit} from '../tech/git';
+import {LogoFigma} from '../tech/figma';
 
 export const Tech = () => {
   return (
     <div className={styles.tech}>
-      <h1>My Tech</h1>
+      <h1>My Skills</h1>
       <p>i'm currently using these </p>
       <div className={styles.ul_container}>
         <ul className={styles.ul}>
           <li>
-            <Link href={'/'}>
-              <Image width={50} src={css} alt={'css'} />
-            </Link>
+            <div className={styles.html}>
+              <Logohtml />
+            </div>
           </li>
           <li>
-            <Link href={'/'}>
-              <Image width={50} height={50} src={html} alt={'html'} />
-            </Link>
+            <div className={styles.css}>
+              <Logocss />
+            </div>
           </li>
           <li>
-            <Link href={'/'}>
-              <Image width={50} height={50} src={js} alt={'javascript'} />
-            </Link>
+            <div className={styles.js}>
+              <Logojs />
+            </div>
           </li>
           <li>
-            <Link href={'/'}>
-              <Image width={50} height={50} src={typescript} alt={'typescript'} />
-            </Link>
+            <div className={styles.ts}>
+              <Logots />
+            </div>
           </li>
           <li>
-            <Link href={'/'}>
-              <Image width={50} height={50} src={react} alt={'reactJS'} />
-            </Link>
+            <div className={styles.react}>
+              <Logoreact />
+            </div>
           </li>
-          <li>
-            <Link href={'/'}>
-              <Image width={50} height={50} src={nextjs} alt={'NextJS'} />
-            </Link>
+          <li className={styles.next}>
+            <div>
+              <Logonextjs />
+            </div>
+          </li>
+          <li className={styles.tailwind}>
+            <div>
+              <TailwindLogo />
+            </div>
+          </li>
+          <li className={styles.git}>
+            <div>
+              <LogoGit />
+            </div>
+          </li>
+          <li className={styles.figma}>
+            <div>
+              <LogoFigma />
+            </div>
           </li>
         </ul>
       </div>
