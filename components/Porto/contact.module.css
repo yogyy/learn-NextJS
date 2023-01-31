@@ -1,0 +1,127 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  color: #0892e7;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+  /* background-image: url(../../public/background/wave.svg); */
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 50px auto;
+
+  display: flex;
+}
+.social {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.social ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  /* margin-right: auto; */
+  margin-right: auto;
+}
+.social ul li {
+  margin: auto;
+}
+.social ul li p {
+  margin: 20px auto;
+}
+.social ul li a {
+  width: 50%;
+  gap: 30px;
+  display: flex;
+  width: 100px;
+  /* justify-content: space-between; */
+  align-content: center;
+}
+.social ul li svg {
+  width: 30px;
+  height: 30px;
+}
+/* .svg {
+  display: flex;
+  justify-content: center;
+} */
+.svg svg {
+  fill: #0081c9;
+}
+
+.contact h1 {
+  width: 80%;
+  display: flex;
+  align-self: top;
+  margin: 20px auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  /* border: 1px solid gray; */
+  border-radius: 10px;
+  width: 60%;
+  /* margin: auto; */
+}
+.form div {
+  width: 90%;
+}
+
+.label,
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: transparent;
+  color: #0081c9;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.input[type='text'],
+.input[type='email'] {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.textarea {
+  height: 100px;
+  resize: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.button[type='submit'] {
+  width: 90%;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  color: #f1f1f1;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid gray;
+}
+
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+  }
+  .form,
+  .social {
+    width: 90%;
+  }
+}

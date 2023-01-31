@@ -9,6 +9,7 @@ import {Porto} from '../components/Porto/porto';
 import {ageCounter} from '../components/countAge';
 import Typewriter from 'typewriter-effect';
 import {Tech} from '../components/Porto/tech';
+import ContactForm from '../components/Porto/contact';
 
 export default function Home() {
   useEffect(() => {
@@ -115,11 +116,12 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Tech />
 
       <div className={styles.porto}>
         <Porto />
       </div>
-      <Tech />
+      <ContactForm />
     </Layout>
   );
 }
