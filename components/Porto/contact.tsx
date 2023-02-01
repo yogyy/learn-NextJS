@@ -120,7 +120,18 @@ const ContactForm: React.FC = () => {
             </li>
           </ul>
         </div>
+
         <form className={styles.form} onSubmit={handleSubmit}>
+          {showModal && (
+            <div className={styles.modal}>
+              <div className={styles.modal_content}>
+                <h3>Email address must end with "@gmail.com".</h3>
+                <button className={styles.button} type="button" onClick={handleCloseModal}>
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
           <h2>Email me</h2>
           <div>
             <label className={styles.label} htmlFor="name">
@@ -136,23 +147,14 @@ const ContactForm: React.FC = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div>
+          <div className={styles.email}>
             <label className={styles.label} htmlFor="email">
               Email:
             </label>
-            {showModal && (
-              <div className={styles.modal}>
-                <div className={styles.modal_content}>
-                  <p>Email address must end with "@gmail.com".</p>
-                  <button type="button" onClick={handleCloseModal}>
-                    Close
-                  </button>
-                </div>
-              </div>
-            )}
             <input
               className={styles.input}
               placeholder="Email"
+              required
               type="text"
               id="email"
               name="email"
