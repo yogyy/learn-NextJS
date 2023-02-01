@@ -64,23 +64,25 @@
   gap: 1rem;
 }
 .containerProject {
-  padding: 16px 0;
-  border-radius: 2rem;
+  /* padding: 16px 0; */
+  /* border-radius: 2rem; */
   background: rgba(0, 0, 0, 0.3);
 }
 .containerProject p {
   padding: 0 16px;
+  display: none;
 }
 .containerProject h3 {
   padding: 0 16px;
+  display: none;
 }
-.containerProject:hover {
+/* .containerProject:hover {
   color: #0081c9;
-  /* background-color: transparent; */
   box-shadow: 5px 6px 5px -2px rgba(0, 129, 201, 1);
   -webkit-box-shadow: 5px 6px 5px -2px rgba(0, 129, 201, 1);
   -moz-box-shadow: 5px 6px 5px -2px rgba(0, 129, 201, 1);
-}
+} */
+
 .project {
   display: flex;
   justify-content: center;
@@ -94,6 +96,7 @@
   gap: 1.5rem;
   padding: 0 16px;
   margin-bottom: 10px;
+  display: none;
 }
 
 .button_2 {
