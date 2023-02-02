@@ -6,9 +6,9 @@
     "es6": true,
     "jest": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "next", "prettier"],
   "globals": {},
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -18,10 +18,10 @@
   },
   "plugins": ["react", "import", "react-hooks"],
   "ignorePatterns": ["node_modules/"],
-  "rules": {},
+  "rules": {"react-hooks/exhaustive-deps": "warn"},
   "settings": {
     "react": {
-      "version": "latest" // "detect" automatically picks the version you have installed.
+      "version": "detect"
     }
   }
 }
