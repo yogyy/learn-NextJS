@@ -125,7 +125,7 @@ const ContactForm: React.FC = () => {
           {showModal && (
             <div className={styles.modal}>
               <div className={styles.modal_content}>
-                <h3>Email address must end with "@gmail.com".</h3>
+                <h3>Email address must end with &quot;@gmail.com&quot;.</h3>
                 <button className={styles.button} type="button" onClick={handleCloseModal}>
                   Close
                 </button>

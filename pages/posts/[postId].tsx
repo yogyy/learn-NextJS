@@ -59,12 +59,12 @@ export async function getStaticPaths() {
     // ],
   };
 }
-interface getStaticProps {
+interface propgetStaticProps {
   params: {
     postId: string;
   };
 }
-export async function getStaticProps(context: getStaticProps) {
+export async function getStaticProps(context: propgetStaticProps) {
   const {postId} = context.params;
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
   const data = await res.json();

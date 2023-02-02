@@ -6,7 +6,7 @@ export default function Navbar() {
     <div className={styles.container}>
       <nav className={styles.header}>
         <p className={styles.logo}>
-          <Link href="/">yogyCons't</Link>
+          <Link href="/">yogyCons&apos;t</Link>
         </p>
         <ul className={styles.ul}>
           <li className={styles.list}>

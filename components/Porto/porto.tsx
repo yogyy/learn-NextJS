@@ -1,7 +1,7 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import React, {useState} from 'react';
-import me from '../../public/me.webp';
+// import me from '../../public/me.webp';
 import styles from './porto.module.css';
 
 export const Porto = () => {
@@ -47,7 +47,8 @@ const KumpulanSlicingUI = () => {
   );
 };
 
-const Project = ({title, src, alt}: any) => {
+// const Project = ({title, src, alt}: any) => {
+const Project = () => {
   return (
     <div className={styles.containerProject}>
       <p>My Project</p>
@@ -66,7 +67,8 @@ const Project = ({title, src, alt}: any) => {
     </div>
   );
 };
-const SlicingUI = ({title, src, alt}: any) => {
+// const SlicingUI = ({title, src, alt}: any) => {
+const SlicingUI = () => {
   return (
     <div className={styles.containerProject}>
       <p>My Slicing UI</p>

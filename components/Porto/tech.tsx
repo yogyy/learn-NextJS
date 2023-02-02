@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import styles from './tech.module.css';
 import Logonextjs from '../tech/nextjs';
@@ -15,7 +14,7 @@ export const Tech = () => {
   return (
     <div className={styles.tech}>
       <h1>My Skills</h1>
-      <p>i'm currently using these </p>
+      <p>i&lsquo;m currently using these</p>
       <div className={styles.ul_container}>
         <ul className={styles.ul}>
           <li>

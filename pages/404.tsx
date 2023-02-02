@@ -12,7 +12,7 @@ export default function Custom404() {
       router.push('/');
     }, 5500);
     return () => console.log('dari 404');
-  }, []);
+  }, [router]);
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function Custom404() {
         <meta name="description" content="website NextJS Basic" />
       </Head>
       <div className={styles.page404}>
-        <p className={styles.protate}>i'm going back to</p>
+        <p className={styles.protate}>i&apos;m going back to</p>
         <Link href="/">
           <h1 className={styles.h1}>404</h1>
         </Link>
