@@ -55,7 +55,7 @@ export default function Home() {
               </h1>
             </div>
             <div className={styles.bungkusFullname}>
-              I'm{' '}
+              I&apos;m
               <span className={styles.fullname}>
                 <Typewriter
                   options={{
@@ -73,14 +73,15 @@ export default function Home() {
         <div className={styles.about}>
           <h1>About 🤷‍♂️</h1>
           <p>
-            Hello, my name is {fullName}, I'm {ageCounter('2003-02-02')} years old now , I started
-            my web-development journey in 2021 when I took a year off after high school. At that
-            time, I was learning by doing, I know a lot about the fundamentals of web development,
-            and the most important thing is I got a new burning passion to this day.
+            Hello, my name is {fullName}, I&apos;m {ageCounter('2003-02-02')} years old now , I
+            started my web-development journey in 2021 when I took a year off after high school. At
+            that time, I was learning by doing, I know a lot about the fundamentals of web
+            development, and the most important thing is I got a new burning passion to this day.
           </p>
           <p>
-            Fast forward to today, I'm still enjoying upgrading my new skills, learning up-to-date
-            new tech stack, and I make sure that I've learned the fundamentals before.
+            Fast forward to today, I&apos;m still enjoying upgrading my new skills, learning
+            up-to-date new tech stack, and I make sure that I&apos;ve learned the fundamentals
+            before.
           </p>
         </div>
         <div className={styles.education}>
