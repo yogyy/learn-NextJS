@@ -48,7 +48,7 @@ export default function Footer() {
           </li>
         </ul>
       </footer>
-      <div className={styles.bottomm}>build with 🧠 👈 brain</div>
+      <div className={styles.bottomm}>build with 🧠</div>
     </div>
   );
 }
