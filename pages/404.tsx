@@ -25,7 +25,6 @@ export default function Custom404() {
         <Link href="/">
           <h1 className={styles.h1}>404</h1>
         </Link>
-
         <p>This page could not be found.</p>
         <p></p>
       </div>
