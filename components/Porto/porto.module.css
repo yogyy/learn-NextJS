@@ -1,16 +1,27 @@
-.btnContainer {
+.porto {
+  max-width: 1024px;
+  width: 80%;
+  padding-top: 100px;
+  margin: auto;
   display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  flex-direction: column;
+  height: 400px;
 }
-/*  style={{
-          alignItems: 'center',
-          display: 'flex',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          margin: '10px 0',
-        }} */
+.project {
+  position: relative;
+  height: 200px;
+  color: whitesmoke;
+}
+.portoContainer {
+  height: 200px;
+  width: 100%;
+}
 
+/*  */
+.btnContainer {
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
 .button_1 {
   appearance: none;
   background-color: transparent;
@@ -20,7 +31,6 @@
   color: #0081c9;
   cursor: pointer;
   display: inline-block;
-
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
@@ -53,44 +63,7 @@
   box-shadow: none;
   transform: translateY(0);
 }
-.bungkus {
-  display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
-}
-.portoContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-.containerProject {
-  /* padding: 16px 0; */
-  /* border-radius: 2rem; */
-  background: rgba(0, 0, 0, 0.3);
-}
-.containerProject p {
-  padding: 0 16px;
-  display: none;
-}
-.containerProject h3 {
-  padding: 0 16px;
-  display: none;
-}
-/* .containerProject:hover {
-  color: #0081c9;
-  box-shadow: 5px 6px 5px -2px rgba(0, 129, 201, 1);
-  -webkit-box-shadow: 5px 6px 5px -2px rgba(0, 129, 201, 1);
-  -moz-box-shadow: 5px 6px 5px -2px rgba(0, 129, 201, 1);
-} */
 
-.project {
-  display: flex;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
-  width: auto;
-  height: 200px;
-  /* border-radius: 2rem; */
-}
 .cont_button2 {
   display: flex;
   gap: 1.5rem;
@@ -156,31 +129,4 @@
 
 .button_2:-webkit-details-marker {
   display: none;
-}
-@media (max-width: 1490px) {
-  .portoContainer {
-    width: 90%;
-    margin: auto;
-  }
-}
-
-@media (max-width: 1224px) {
-  .portoContainer {
-    grid-template-columns: 1fr 1fr;
-    width: 80%;
-    margin: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .portoContainer {
-    grid-template-columns: 1fr 1fr;
-    width: 90%;
-    margin: auto;
-  }
-}
-@media (max-width: 425px) {
-  .portoContainer {
-    grid-template-columns: 1fr;
-  }
 }

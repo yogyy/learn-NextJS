@@ -1,4 +1,5 @@
 .contact {
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   color: #0892e7;
@@ -146,9 +147,13 @@
   color: #0081c9;
   top: -20px;
   padding: 20px 0;
+  z-index: 10;
 }
 .modal_content {
   margin: auto;
+}
+.modal:target {
+  visibility: visible;
 }
 /* .modal_content button {
 } */

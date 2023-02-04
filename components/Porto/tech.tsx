@@ -9,60 +9,65 @@ import Logoreact from '../tech/react';
 import {TailwindLogo} from '../tech/tailwind';
 import {LogoGit} from '../tech/git';
 import {LogoFigma} from '../tech/figma';
+import Marquee from 'react-fast-marquee';
 
 export const Tech = () => {
   return (
     <div className={styles.tech}>
-      <h1>My Skills</h1>
-      <p>i&lsquo;m currently using these</p>
+      <div className={styles.h1_skill}>
+        <h1>My Skills</h1>
+      </div>
+
       <div className={styles.ul_container}>
-        <ul className={styles.ul}>
-          <li>
-            <div className={styles.html}>
-              <Logohtml />
-            </div>
-          </li>
-          <li>
-            <div className={styles.css}>
-              <Logocss />
-            </div>
-          </li>
-          <li>
-            <div className={styles.js}>
-              <Logojs />
-            </div>
-          </li>
-          <li>
-            <div className={styles.ts}>
-              <Logots />
-            </div>
-          </li>
-          <li>
-            <div className={styles.react}>
-              <Logoreact />
-            </div>
-          </li>
-          <li className={styles.next}>
-            <div>
-              <Logonextjs />
-            </div>
-          </li>
-          <li className={styles.tailwind}>
-            <div>
-              <TailwindLogo />
-            </div>
-          </li>
-          <li className={styles.git}>
-            <div>
-              <LogoGit />
-            </div>
-          </li>
-          <li className={styles.figma}>
-            <div>
-              <LogoFigma />
-            </div>
-          </li>
-        </ul>
+        <Marquee gradientColor={[2, 12, 28]} gradientWidth={160}>
+          <ul className={styles.ul}>
+            <li>
+              <div className={styles.html}>
+                <Logohtml />
+              </div>
+            </li>
+            <li>
+              <div className={styles.css}>
+                <Logocss />
+              </div>
+            </li>
+            <li>
+              <div className={styles.js}>
+                <Logojs />
+              </div>
+            </li>
+            <li>
+              <div className={styles.ts}>
+                <Logots />
+              </div>
+            </li>
+            <li>
+              <div className={styles.react}>
+                <Logoreact />
+              </div>
+            </li>
+            <li className={styles.next}>
+              <div>
+                <Logonextjs />
+              </div>
+            </li>
+            <li className={styles.tailwind}>
+              <div>
+                <TailwindLogo />
+              </div>
+            </li>
+            <li className={styles.git}>
+              <div>
+                <LogoGit />
+              </div>
+            </li>
+            <li className={styles.figma}>
+              <div>
+                <LogoFigma />
+              </div>
+            </li>
+          </ul>
+        </Marquee>
       </div>
     </div>
   );
