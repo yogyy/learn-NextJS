@@ -162,12 +162,12 @@
   border-radius: 50px;
   width: 30px;
   height: 30px;
-  right: -15px;
+  right: -6px;
   top: 40px;
   z-index: 3;
 }
 .right .titik {
-  left: -16.5px;
+  left: -9px;
 }
 .left {
   margin-right: auto;
