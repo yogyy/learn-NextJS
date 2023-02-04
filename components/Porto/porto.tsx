@@ -3,12 +3,13 @@ import Image, {StaticImageData} from 'next/image';
 import styles from './porto.module.css';
 import proj1 from '../../public/project/project-todo.png';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Autoplay} from 'swiper';
+import SwiperCore, {Autoplay, FreeMode, Pagination} from 'swiper';
+import Link from 'next/link';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import Link from 'next/link';
+import 'swiper/css/free-mode';
 
 export const Porto = () => {
   const [porto, setPorto] = useState(false);
@@ -60,6 +61,11 @@ const KumpulanSlicingUI = () => {
       <Swiper
         spaceBetween={30}
         slidesPerView={2}
+        freeMode={true}
+        modules={[FreeMode, Pagination]}
+        pagination={{
+          clickable: true,
+        }}
         breakpoints={{
           700: {
             slidesPerView: 2,
