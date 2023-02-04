@@ -44,14 +44,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div
-            data-aos="fade-down"
-            data-aos-easing="linear"
-            data-aos-duration="1500"
-            className={styles.intro}>
+          <div className={styles.intro}>
             <div className={styles.bungkusH1}>
-              <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="600">
-                hello <span className={styles.wave}>⋱</span>∘
+              <h1>
+                hello <span className={styles.wave}>\</span>∘
               </h1>
             </div>
             <div className={styles.bungkusFullname}>
@@ -117,7 +113,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Tech />
+      <div className={styles.tech}>
+        <Tech />
+      </div>
 
       <div className={styles.porto}>
         <Porto />
