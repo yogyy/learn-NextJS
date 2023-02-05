@@ -143,7 +143,7 @@ const Project = ({title, src, alt}: PropProject) => {
   return (
     <div className={styles.project}>
       <div className={styles.project}>
-        <Image title={title} alt={alt} src={src} fill sizes="" />
+        <Image title={title} alt={alt} src={src} fill sizes="auto" />
       </div>
       {/* <div className={styles.cont_button2}>
         <Link className={styles.button_2} href="/">
@@ -161,7 +161,7 @@ const SlicingUI = ({title, src, alt}: PropProject) => {
   return (
     <>
       <div className={styles.project}>
-        <Image title={title} alt={alt} src={src} fill />
+        <Image title={title} alt={alt} src={src} fill sizes="auto" />
       </div>
     </>
   );
