@@ -1,3 +1,4 @@
+'use client';
 import React, {useState} from 'react';
 import Image, {StaticImageData} from 'next/image';
 import styles from './porto.module.css';
@@ -32,12 +33,12 @@ export const Porto = () => {
         </button> */}
         <button
           className={`${styles.button_1} ${Project ? styles.active : ''}`}
-          onClick={() => showProject()}>
+          onClick={showProject}>
           My Project
         </button>
         <button
           className={`${styles.button_1} ${Slicing ? styles.active : ''}`}
-          onClick={() => showSlicing()}>
+          onClick={showSlicing}>
           My Slicing UI
         </button>
       </div>
