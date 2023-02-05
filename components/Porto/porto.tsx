@@ -3,8 +3,7 @@ import Image, {StaticImageData} from 'next/image';
 import styles from './porto.module.css';
 import proj1 from '../../public/project/project-todo.png';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Autoplay, FreeMode, Pagination} from 'swiper';
-import Link from 'next/link';
+import {FreeMode, Pagination} from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -12,20 +11,41 @@ import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
 
 export const Porto = () => {
-  const [porto, setPorto] = useState(false);
+  // const [porto, setPorto] = useState(false);
+  const [Project, setProject] = useState(true);
+  const [Slicing, setSlicing] = useState(false);
 
-  SwiperCore.use([Autoplay]);
+  const showProject = () => {
+    setProject(true);
+    setSlicing(false);
+  };
+  const showSlicing = () => {
+    setSlicing(true);
+    setProject(false);
+  };
 
   return (
     <div className={styles.porto}>
       <div className={styles.btnContainer}>
-        <button className={styles.button_1} onClick={() => setPorto(!porto)}>
+        {/* <button className={styles.button_1} onClick={() => setPorto(!porto)}>
           My {porto ? <>Slicing UI</> : <>Project</>}
+        </button> */}
+        <button
+          className={`${styles.button_1} ${Project ? styles.active : ''}`}
+          onClick={() => showProject()}>
+          My Project
+        </button>
+        <button
+          className={`${styles.button_1} ${Slicing ? styles.active : ''}`}
+          onClick={() => showSlicing()}>
+          My Slicing UI
         </button>
       </div>
       <div className={styles.bungkus}>
         <div className={styles.portoContainer}>
-          {porto ? <KumpulanProject /> : <KumpulanSlicingUI />}
+          {/* {porto ? <KumpulanProject /> : <KumpulanSlicingUI />} */}
+          {Project && <KumpulanProject />}
+          {Slicing && <KumpulanSlicingUI />}
         </div>
       </div>
     </div>
@@ -62,6 +82,7 @@ const KumpulanSlicingUI = () => {
         spaceBetween={30}
         slidesPerView={2}
         freeMode={true}
+        autoplay={true}
         modules={[FreeMode, Pagination]}
         pagination={{
           clickable: true,
@@ -77,31 +98,31 @@ const KumpulanSlicingUI = () => {
           },
         }}>
         <SwiperSlide>
-          <SlicingUI src={proj1} alt="slicingthumnb" title="sa" />
+          <SlicingUI src={proj1} alt="slicingthumnb" title="todo list" />
         </SwiperSlide>
         <SwiperSlide>
-          <SlicingUI src={proj1} alt="slicingthumnb" title="sa" />
+          <SlicingUI src={proj1} alt="slicingthumnb" title="todo list" />
         </SwiperSlide>
         <SwiperSlide>
-          <SlicingUI src={proj1} alt="slicingthumnb" title="sa" />
+          <SlicingUI src={proj1} alt="slicingthumnb" title="todo list" />
         </SwiperSlide>
         <SwiperSlide>
-          <SlicingUI src={proj1} alt="slicingthumnb" title="sa" />
+          <SlicingUI src={proj1} alt="slicingthumnb" title="todo list" />
         </SwiperSlide>
         <SwiperSlide>
-          <SlicingUI src={proj1} alt="slicingthumnb" title="sa" />
+          <SlicingUI src={proj1} alt="slicingthumnb" title="todo list" />
         </SwiperSlide>
         <SwiperSlide>
-          <SlicingUI src={proj1} alt="slicingthumnb" title="sa" />
+          <SlicingUI src={proj1} alt="slicingthumnb" title="todo list" />
         </SwiperSlide>
         <SwiperSlide>
-          <SlicingUI src={proj1} alt="slicingthumnb" title="sa" />
+          <SlicingUI src={proj1} alt="slicingthumnb" title="todo list" />
         </SwiperSlide>
         <SwiperSlide>
-          <SlicingUI src={proj1} alt="slicingthumnb" title="sa" />
+          <SlicingUI src={proj1} alt="slicingthumnb" title="todo list" />
         </SwiperSlide>
         <SwiperSlide>
-          <SlicingUI src={proj1} alt="slicingthumnb" title="sa" />
+          <SlicingUI src={proj1} alt="slicingthumnb" title="todo list" />
         </SwiperSlide>
       </Swiper>
     </div>
@@ -121,8 +142,8 @@ const Project = ({title, src, alt}: PropProject) => {
   // const Project = () => {
   return (
     <div className={styles.project}>
-      <div>
-        <Image title={title} alt={alt} src={src} fill />
+      <div className={styles.project}>
+        <Image title={title} alt={alt} src={src} fill sizes="" />
       </div>
       {/* <div className={styles.cont_button2}>
         <Link className={styles.button_2} href="/">
@@ -140,9 +161,7 @@ const SlicingUI = ({title, src, alt}: PropProject) => {
   return (
     <>
       <div className={styles.project}>
-        <Link href={'#'}>
-          <Image title={title} alt={alt} src={src} fill />
-        </Link>
+        <Image title={title} alt={alt} src={src} fill />
       </div>
     </>
   );
