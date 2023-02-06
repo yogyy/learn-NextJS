@@ -3,8 +3,11 @@
   display: flex;
   flex-direction: column;
   color: #0892e7;
+  max-width: 1024px;
+  justify-content: center;
+  margin: 0 auto;
+
   /* background-color: rgba(0, 0, 0, 0.3); */
-  background-image: url(../../public/background/wave.svg);
 }
 
 .container {
@@ -92,7 +95,7 @@
   font-size: 16px;
   box-sizing: border-box;
   background-color: transparent;
-  color: #0081c9;
+  /* color: #0081c9; */
 }
 
 .label {
@@ -100,9 +103,17 @@
 }
 
 .input[type='text'],
-.input[type='email'] {
+.input[type='email'],
+.textarea {
   border: 1px solid gray;
   border-radius: 5px;
+  color: whitesmoke;
+}
+
+.input[type='text']:focus,
+.input[type='email']:focus,
+.textarea:focus {
+  background-color: #020c1c;
 }
 
 .textarea {
@@ -123,6 +134,9 @@
   font-weight: bold;
   cursor: pointer;
   border: 1px solid gray;
+}
+.button[type='submit']:hover {
+  background-color: #020c1c;
 }
 .button[type='button'] {
   width: 100%;
@@ -155,8 +169,6 @@
 .modal:target {
   visibility: visible;
 }
-/* .modal_content button {
-} */
 
 @media (max-width: 600px) {
   .container {

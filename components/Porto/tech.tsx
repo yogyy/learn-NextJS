@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import styles from './tech.module.css';
 import Logonextjs from '../tech/nextjs';
@@ -19,7 +20,7 @@ export const Tech = () => {
       </div>
 
       <div className={styles.ul_container}>
-        <Marquee gradientColor={[2, 12, 28]} gradientWidth={160}>
+        <Marquee gradientColor={[2, 12, 28]} gradientWidth={160} pauseOnHover={true} play={true}>
           <ul className={styles.ul}>
             <li>
               <div className={styles.html}>
@@ -46,8 +47,8 @@ export const Tech = () => {
                 <Logoreact />
               </div>
             </li>
-            <li className={styles.next}>
-              <div>
+            <li>
+              <div className={styles.next}>
                 <Logonextjs />
               </div>
             </li>

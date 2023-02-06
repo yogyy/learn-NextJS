@@ -9,7 +9,7 @@ interface FormData {
 }
 
 const ContactForm: React.FC = () => {
-  let [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     message: '',
@@ -50,6 +50,7 @@ const ContactForm: React.FC = () => {
       })
       .catch((error) => {
         console.error(error);
+        alert('failed to submit email, try again later');
       });
 
     setFormData({
@@ -167,6 +168,7 @@ const ContactForm: React.FC = () => {
               Message:
             </label>
             <textarea
+              required
               placeholder="Message"
               className={styles.textarea}
               id="message"

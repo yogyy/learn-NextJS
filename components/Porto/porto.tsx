@@ -1,8 +1,7 @@
-'use client';
 import React, {useState} from 'react';
 import Image, {StaticImageData} from 'next/image';
 import styles from './porto.module.css';
-import proj1 from '../../public/project/project-todo.png';
+import proj1 from '../../public/project/project-1.webp';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {FreeMode, Pagination} from 'swiper';
 
@@ -55,10 +54,10 @@ export const Porto = () => {
 
 const KumpulanProject = () => {
   return (
-    <div className={styles.mediaScroll}>
+    <div className={styles.swiperContainer}>
       <Swiper
         spaceBetween={30}
-        slidesPerView={2}
+        slidesPerView={1}
         breakpoints={{
           700: {
             slidesPerView: 2,
@@ -70,7 +69,7 @@ const KumpulanProject = () => {
           },
         }}>
         <SwiperSlide>
-          <Project title={'sda'} alt={'string'} src={proj1} />
+          <Project title={'todo list'} alt={'string'} src={proj1} />
         </SwiperSlide>
       </Swiper>
     </div>
@@ -78,10 +77,10 @@ const KumpulanProject = () => {
 };
 const KumpulanSlicingUI = () => {
   return (
-    <div className={styles.mediaScroll}>
+    <div className={styles.swiperContainer}>
       <Swiper
         spaceBetween={30}
-        slidesPerView={2}
+        slidesPerView={1}
         freeMode={true}
         autoplay={true}
         modules={[FreeMode, Pagination]}
@@ -144,7 +143,14 @@ const Project = ({title, src, alt}: PropProject) => {
   return (
     <div className={styles.project}>
       <div className={styles.project}>
-        <Image title={title} alt={alt} src={src} fill sizes="auto" />
+        <Image
+          title={title}
+          alt={alt}
+          src={src}
+          fill
+          sizes="(max-width: 768px) 100vw,50vw"
+          style={{aspectRatio: '16/9'}}
+        />
       </div>
       {/* <div className={styles.cont_button2}>
         <Link className={styles.button_2} href="/">
@@ -162,7 +168,7 @@ const SlicingUI = ({title, src, alt}: PropProject) => {
   return (
     <>
       <div className={styles.project}>
-        <Image title={title} alt={alt} src={src} fill sizes="auto" />
+        <Image title={title} alt={alt} src={src} sizes="auto" style={{aspectRatio: '16/9'}} />
       </div>
     </>
   );

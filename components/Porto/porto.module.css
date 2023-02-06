@@ -1,7 +1,7 @@
 .porto {
   max-width: 1024px;
   width: 80%;
-  padding-top: 100px;
+  /* padding-top: 100px; */
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,10 @@
   height: 200px;
   width: 100%;
 }
-
+.bungkus {
+  width: 100%;
+  display: flex;
+}
 /*  */
 .btnContainer {
   display: flex;
@@ -26,7 +29,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 50px;
+  margin: 50px auto;
   cursor: default;
 }
 .button_1 {
@@ -86,11 +89,21 @@
   cursor: default;
 }
 
-@media screen and (max-width: 600px) {
-  .porto {
-    width: 95%;
+@media screen and (max-width: 700px) {
+  .bungkus {
+    width: 75%;
+    margin: 0 auto;
   }
   .button_1 {
     width: 40%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .porto {
+    width: 100%;
+  }
+  .bungkus {
+    width: 100%;
   }
 }

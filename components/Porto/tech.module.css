@@ -54,28 +54,33 @@
   margin: 0 40px 0px;
 }
 
-/* .ul li:nth-child(6) svg {
-  margin: 5px;
-  width: 45px;
-  height: 45px;
-} */
+.react {
+  animation: spin infinite 7s linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
 
 .js,
 .ts {
   margin: auto;
 }
-
-.ul li div {
+.ul li div svg {
   filter: grayscale(1);
 }
+
 .ul li:nth-child(6) {
-  filter: contrast(0);
+  transform: scale(1.25);
+  filter: invert(100%);
 }
 .ul li:nth-child(6):hover {
-  /* transition: ease-in 200ms; */
   filter: none;
 }
-.ul li div:hover {
+.ul li div svg:hover {
   filter: none;
-  transform: scale(1.25);
 }
