@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --lightest-navy: #303c55;
   --navy-shadow: rgba(2, 12, 27, 0.7);
@@ -18,9 +22,11 @@ html {
   margin: 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
     Verdana, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--navy);
-  color: #a8b2d1;
   overflow-x: hidden;
+  color: #a8b2d1;
 }
 
 a {
@@ -30,6 +36,11 @@ a {
 
 #__next {
   height: 100%;
+}
+
+.layout {
+  max-width: 68rem;
+  @apply mx-auto w-11/12;
 }
 
 .button-89 {
@@ -48,12 +59,14 @@ a {
   outline: var(--b) solid #0000;
   outline-offset: 0.6em;
   font-size: 16px;
-
   border: 0;
-
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+.min-h-main {
+  height: calc(100vh - 62px);
 }
 
 .button-89:hover,
@@ -89,6 +102,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .swiper-slide img {
