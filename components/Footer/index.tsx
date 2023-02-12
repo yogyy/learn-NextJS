@@ -26,6 +26,7 @@ export default function Footer() {
       return router.push('/blogs');
     }
   }
+
   return (
     <div className={styles.container}>
       <footer className={styles.footer}>

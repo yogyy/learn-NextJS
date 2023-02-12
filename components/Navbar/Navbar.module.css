@@ -1,21 +1,27 @@
 .container {
-  /* position: fixed; */
   width: 100%;
   display: block;
   position: fixed;
-  background-color: rgb(0, 0, 0, 30%);
-  box-shadow: 3px 3px 11px 3px rgb(0, 0, 0, 32%);
-  z-index: 2;
+  background: transparent;
+}
+.ContainerScrolled {
+  width: 100%;
+  display: block;
+  position: fixed;
+  background-blend-mode: screen;
+  box-shadow: 3px 3px 11px 3px rgb(0, 0, 0, 22%);
+  backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
 .header {
   /* min-width: 400px; */
-  max-width: 1400px;
+  max-width: 1240px;
   color: #0081c9;
   margin: 0 auto;
   align-items: center;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   height: 85px;
 }
 
@@ -31,13 +37,14 @@
 .ul {
   display: flex;
   gap: 30px;
-  margin-right: 30px;
+  margin-right: 40px;
+  padding: 0;
 }
 .logo {
   margin-right: auto;
   font-size: 1.5rem;
   color: #0081c9;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 @media (max-width: 600px) {

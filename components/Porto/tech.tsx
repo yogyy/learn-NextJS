@@ -19,7 +19,7 @@ export const Tech = () => {
         <h1>My Skills</h1>
       </div>
 
-      <div className={styles.ul_container}>
+      <div className={`h-full ${styles.ul_container}`}>
         <Marquee gradientColor={[2, 12, 28]} gradientWidth={160} pauseOnHover={true} play={true}>
           <ul className={styles.ul}>
             <li>

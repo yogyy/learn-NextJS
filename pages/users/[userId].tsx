@@ -1,3 +1,5 @@
+'use client';
+
 import {useRouter} from 'next/router';
 import Layout from '../../components/Layout';
 import styles from '../../styles/Users.module.css';
