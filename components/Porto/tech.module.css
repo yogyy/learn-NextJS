@@ -3,12 +3,9 @@
   flex-direction: column;
   padding-top: 80px;
   align-items: flex-start;
-  margin: auto;
   color: #0892e7;
-  max-width: 1024px;
-  height: 300px;
+  height: 200px;
   justify-content: space-between;
-  background-color: rgb(2, 12, 28);
 }
 
 .h1_skill {
@@ -24,19 +21,14 @@
   flex-direction: row;
   justify-content: center;
   margin: 0 auto;
-  max-width: 1024px;
   background: transparent;
 }
 
 .ul {
   list-style: none;
   display: flex;
-  /* max-width: 1024px; */
   flex-wrap: wrap;
-  /* justify-content: flex-start; */
-  /* margin: 10px; */
   padding: 0;
-  /* background: black; */
 }
 .ul li {
   background-color: transparent;
@@ -76,7 +68,7 @@
 
 .ul li:nth-child(6) {
   transform: scale(1.25);
-  filter: invert(100%);
+  filter: invert(50%);
 }
 .ul li:nth-child(6):hover {
   filter: none;
