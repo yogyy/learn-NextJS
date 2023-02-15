@@ -6,7 +6,7 @@ import ContactForm from '../Porto/contact';
 
 import styles from './Footer.module.css';
 
-export function Footer1() {
+export function OldFooter() {
   const router = useRouter();
   function otHome() {
     if (window.location.pathname === '/') {
@@ -83,7 +83,6 @@ export default function Footer() {
             <button onClick={handleClick}>
               <FiMail />
             </button>
-
             <UnstyledLink href="https://github.com/yogyy">
               <SiGithub />
             </UnstyledLink>
@@ -117,7 +116,7 @@ const SiGithub = () => {
       className="h-6 w-6 align-middle text-gray-600 hover:text-sky-500 dark:text-gray-300 dark:hover:text-sky-600 "
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       role="img"
       viewBox="0 0 24 24"
       height="1em"
@@ -135,7 +134,7 @@ const SiFacebok = () => {
       className="h-6 w-6 align-middle text-gray-600 hover:text-sky-500 dark:text-gray-300 dark:hover:text-sky-500"
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       role="img"
       viewBox="0 0 24 24"
       height="1em"
@@ -152,7 +151,7 @@ const SiLinkedIn = () => {
     <svg
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       role="img"
       viewBox="0 0 24 24"
       className="my-auto h-6 w-6 align-middle text-gray-600 transition-colors hover:text-sky-500 dark:text-gray-300 dark:hover:text-sky-500"
@@ -190,7 +189,7 @@ const SiTwitter = () => {
       className="my-auto h-6 w-6 align-middle text-gray-600 transition-colors hover:text-sky-500 dark:text-gray-300 dark:hover:text-sky-500"
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       role="img"
       viewBox="0 0 24 24"
       height="1em"
