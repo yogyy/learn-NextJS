@@ -70,7 +70,7 @@ export const About = () => {
         />
       </div>
 
-      <article className="max-w-5xl mt-4 text-gray-700 dark:text-gray-200 md:mt-6 md:text-lg 2xl:text-xl ">
+      <article className="max-w-5xl mt-4  md:mt-6 md:text-lg 2xl:text-xl ">
         <p gaya-fade="5" className="mb-4 leading-6">
           Hello, my name is yogi. i started programming in early high school, which is the start of
           the pandemic that is currently sweeping the world. Initially, I was just writing basic
