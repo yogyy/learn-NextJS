@@ -11,12 +11,15 @@ import {TailwindLogo} from '../tech/tailwind';
 import {LogoGit} from '../tech/git';
 import {LogoFigma} from '../tech/figma';
 import Marquee from 'react-fast-marquee';
+import {Accent1} from '../links/Accent';
 
 export const Tech = () => {
   return (
     <div className={styles.tech}>
       <div className={styles.h1_skill}>
-        <h1>My Skills</h1>
+        <h1>
+          <Accent1>My Current Skill</Accent1>
+        </h1>
       </div>
       <TechStack />
     </div>
@@ -27,7 +30,6 @@ export const TechStack = () => {
   return (
     <div className={`h-full ${styles.ul_container}`}>
       <Marquee gradient={false} pauseOnHover={false} play={true}>
-        <TechStacks />
         <TechStacks />
       </Marquee>
     </div>

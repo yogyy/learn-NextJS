@@ -1,27 +1,24 @@
 .tech {
   display: flex;
   flex-direction: column;
-  padding-top: 80px;
   align-items: flex-start;
-  color: #0892e7;
+  /* color: #0892e7; */
   height: 200px;
   justify-content: space-between;
 }
 
-.h1_skill {
+/* .h1_skill {
   margin: 0 auto;
   font-size: 20px;
 }
 .h1_skill h1 {
   margin: 0;
-}
+} */
 
 .ul_container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+
   margin: 0 auto;
-  background: transparent;
 }
 
 .ul {
