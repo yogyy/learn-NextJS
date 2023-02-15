@@ -1,180 +1,190 @@
-// import Image from 'next/image';
 import Layout from '../components/Layout';
 import styles from '../styles/Home.module.css';
-// import pic from '../public/me.webp';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import {useEffect} from 'react';
-import {Porto} from '../components/Porto/porto';
-import {ageCounter} from '../components/countAge';
+import {useEffect, useRef} from 'react';
+// import {Porto} from '../components/Porto/porto';
 import Typewriter from 'typewriter-effect';
 import {Tech} from '../components/Porto/tech';
-import ContactForm from '../components/Porto/contact';
 import clsx from 'clsx';
 import ButtonLink from '../components/links/ButtonLink';
 import UnstyledLink from '../components/links/UnstyledLink';
+import {About} from './about';
+import useLoaded from './hooks/useLoaded';
+import Marquee from 'react-fast-marquee';
+import {LogoLink} from '../components/links/LogoName';
 
 export default function Home() {
+  const isLoaded = useLoaded();
+  const about = useRef(null);
   useEffect(() => {
     AOS.init({
+      // disable: true,
       once: false,
-      duration: 1200,
+      duration: 700,
     });
-    return window.scrollTo(0, 0);
+    window.scrollTo(0, Number(localStorage.getItem('scrollPos')) || 0);
+    // return window.scrollTo({top: 0, behavior: 'smooth'});
+  }, []);
+  useEffect(() => {
+    // Save scroll position on beforeunload event
+    const saveScrollPos = (): void => {
+      localStorage.setItem('scrollPos', String(window.pageYOffset));
+    };
+    window.addEventListener('beforeunload', saveScrollPos);
+
+    return () => {
+      window.removeEventListener('beforeunload', saveScrollPos);
+    };
   }, []);
 
-  const fullName = 'Muhammad Yogi Firman Syah';
   return (
     <Layout pageTitle={'yogyy'}>
-      <div className="dark:bg-zinc-900 justify-center">
-        <section className="h-screen mb-20 flex flex-col justify-center">
-          <div>
-            <div data-aos="zoom-in">
-              {/* <div className={styles.bungkusImg}>
-                <Image
-                  className={styles.img}
-                  src={pic}
-                  alt={'me'}
-                  priority
-                  style={{
-                    maxWidth: 'auto',
-                    height: 'auto',
-                    borderRadius: '50%',
-                    display: 'flex',
+      <section
+        className={clsx('h-screen flex flex-col justify-center', isLoaded && 'fade-in-start')}>
+        <article className={`mx-auto layout -mt-14 ${styles.intro}`}>
+          <div className={`${styles.bungkusH1}`}>
+            <h1 gaya-fade="1">
+              <span
+                className={`text-sky-500 tracking-widest md:tracking-wide xl:tracking-tight ${styles.greetings}`}>
+                hi
+              </span>
+            </h1>
+          </div>
+          <h2 gaya-fade="2" className=" mt-1">
+            You can call me <LogoLink />
+          </h2>
+          <div className={`mt-1  ${styles.bungkusFullname}`}>
+            <h3 gaya-fade="3" className="flex flex-wrap">
+              I&apos;m a <span className="mr-2"> </span>
+              <span className={`flex flex-wrap text-sky-500 ${styles.fullname}`}>
+                <Typewriter
+                  gaya-fade="4"
+                  options={{
+                    strings: ['Frontend Engineer', 'Web Developer'],
+                    autoStart: true,
+                    loop: true,
                   }}
                 />
-              </div> */}
-            </div>
-          </div>
-
-          <article className={`mx-auto layout -mt-14 ${styles.intro}`}>
-            <div className={`${styles.bungkusH1}`}>
-              <h1
-                data-aos="fade-up"
-                data-aos-delay="100"
-                className="className='text-2xl md:text-4xl 2xl:text-5xl">
-                <span className={styles.greetings}>hello </span>
-              </h1>
-            </div>
-            <h2
-              data-aos="fade-up"
-              data-aos-delay="200"
-              className="font-bold mt-1 text-3xl md:text-5xl 2xl:text-6xl">
-              You can call me{' '}
-              <span className="text-blue-300">
-                <span className="text-4xl md:text-6xl 2xl:text-7xl ">y</span>ogyy
               </span>
-            </h2>
-            <div className={`mt-1 text-3xl md:text-5xl 2xl:text-6xl ${styles.bungkusFullname}`}>
-              <h3 data-aos="fade-up" data-aos-delay="300" className="flex flex-wrap">
-                I&apos;m a
-                <span className={`ml-2 ${styles.fullname}`}>
-                  <Typewriter
-                    data-aos="fade-up"
-                    data-aos-delay="400"
-                    options={{
-                      strings: [' Frontend Engineer', ' Web Developer'],
-                      autoStart: true,
-                      loop: true,
-                    }}
-                  />
-                </span>
-              </h3>
-            </div>
-            <p
-              data-aos="fade-up"
-              data-aos-delay="500"
-              className="mt-4 max-w-4xl text-gray-700 dark:text-gray-200 md:mt-6 md:text-lg 2xl:text-xl">
-              I work with React Ecosystem, and write to teach people how to rebuild and redefine
-              fundamental concepts through mental models.
-            </p>
-            <div
-              data-aos="fade-up"
-              data-aos-delay="600"
-              className="mt-8 flex flex-wrap gap-4 md:!text-lg">
-              <div className="group relative">
-                <div
-                  className={clsx(
-                    'absolute -inset-0.5 animate-tilt rounded blur',
-                    'bg-gradient-to-r from-primary-300 to-primary-400',
-                    'dark:from-primary-200 dark:via-primary-300',
-                    'opacity-75 transition duration-1000 group-hover:opacity-100 group-hover:duration-200'
-                  )}
-                />
-                <ButtonLink href="#intro">Read the blog</ButtonLink>
-              </div>
-              <ButtonLink href="/about">Learn more about me</ButtonLink>
-            </div>
-            <div
-              data-aos="fade-up"
-              data-aos-delay="700"
-              className="mt-4 flex flex-wrap gap-4 gap-y-2 md:mt-8">
-              <UnstyledLink
-                href="/"
-                className={clsx(
-                  'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
-                  'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
-                  'transition-colors'
-                )}>
-                {/* <IoNewspaperSharp className="shrink-0" /> */}
-                <span>Resume</span>
-              </UnstyledLink>
-              <UnstyledLink
-                href="https://twitter.com/yogyy"
-                className={clsx(
-                  'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'group text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
-                  'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
-                  'transition-colors'
-                )}>
-                {/* <SiTwitter className="shrink-0 transition-colors group-hover:text-[#1da1f2]" /> */}
-                <span>@yogyy</span>
-              </UnstyledLink>
-              <UnstyledLink
-                href="https://github.com/yogyy"
-                className={clsx(
-                  'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
-                  'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
-                  'transition-colors'
-                )}>
-                {/* <SiGithub className="shrink-0" /> */}
-                <span>constantine</span>
-              </UnstyledLink>
-            </div>
-          </article>
-        </section>
-      </div>
-      <div className={styles.content1}>
-        <div className={styles.about}>
-          <h1 data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-            About 🤷‍♂️
-          </h1>
-          <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom ">
-            Hello, my name is {fullName}, I&apos;m {ageCounter('2003-02-02')} years old now , I
-            started my web-development journey in 2021 when I took a year off after high school. At
-            that time, I was learning by doing, I know a lot about the fundamentals of web
-            development, and the most important thing is I got a new burning passion to this day.
+            </h3>
+          </div>
+          <p gaya-fade="5" className="mt-4 max-w-4xl md:mt-6 md:text-lg 2xl:text-xl">
+            I work with react js and next js. Lorem ipsum dolor sit. <br /> Lorem, ipsum dolor sit
+            amet consectetur adipisicing elit. Eveniet.
           </p>
-          <p data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-            Fast forward to today, I&apos;m still enjoying upgrading my new skills, learning
-            up-to-date new tech stack, and I make sure that I&apos;ve learned the fundamentals
-            before.
-          </p>
-        </div>
-        <div className={styles.education}>
-          <h1 data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-            Education 📚
-          </h1>
+          <div gaya-fade="6" className="mt-8 flex flex-wrap gap-4 md:!text-lg">
+            <div className="group relative">
+              <div
+                className={clsx(
+                  'absolute -inset-0.5 animate-tilt rounded blur',
+                  'bg-gradient-to-r from-primary-300 to-primary-400',
+                  'dark:from-primary-200 dark:via-primary-300',
+                  'opacity-75 transition duration-1000 group-hover:opacity-100 group-hover:duration-200'
+                )}
+              />
+              <ButtonLink href="#about">Read the blog</ButtonLink>
+            </div>
+            <ButtonLink href="/about">Learn more about me</ButtonLink>
+          </div>
+          <div
+            gaya-fade="7"
+            data-aos="fade-up"
+            data-aos-delay="700"
+            className="mt-4 flex flex-wrap gap-4 gap-y-2 md:mt-8">
+            <UnstyledLink
+              href="/"
+              className={clsx(
+                'inline-flex items-center gap-1 text-sm font-medium md:text-base',
+                'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
+                'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
+                'transition-colors'
+              )}>
+              {/* <IoNewspaperSharp className="shrink-0" /> */}
+              <span>Resume</span>
+            </UnstyledLink>
+            <UnstyledLink
+              href="https://twitter.com/yogyy"
+              className={clsx(
+                'inline-flex items-center gap-1 text-sm font-medium md:text-base',
+                'group text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
+                'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
+                'transition-colors'
+              )}>
+              {/* <SiTwitter className="shrink-0 transition-colors group-hover:text-[#1da1f2]" /> */}
+              <span>@yogyy</span>
+            </UnstyledLink>
+            <UnstyledLink
+              href="https://github.com/yogyy"
+              className={clsx(
+                'inline-flex items-center gap-1 text-sm font-medium md:text-base',
+                'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
+                'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
+                'transition-colors'
+              )}>
+              {/* <SiGithub className="shrink-0" /> */}
+              <span>constantine</span>
+            </UnstyledLink>
+          </div>
+        </article>
+      </section>
+      <section>
+        <Marquee
+          className={clsx(
+            'text-sky-500 dark:text-sky-800 layout absolute runningtext text-5xl -z-10',
+            isLoaded && 'fade-in-start'
+          )}
+          style={{top: '100px'}}
+          gradient={false}>
+          <span gaya-fade="4" className={``}>
+            Muhammad
+          </span>
+          <span className="w-9"></span>
+          <span gaya-fade="5" className="runningtextBold">
+            yogi
+          </span>
+          <span className="w-9"></span>
+          <span gaya-fade="4" className={``}>
+            firman
+          </span>
+          <span className="w-9"></span>
+          <span gaya-fade="5" className="runningtextBold">
+            syah
+          </span>
+          <span className="w-9"></span>
+          <span gaya-fade="4" className={``}>
+            Muhammad
+          </span>
+          <span className="w-9"></span>
+          <span gaya-fade="5" className="runningtextBold">
+            yogi
+          </span>
+          <span className="w-9"></span>
+          <span gaya-fade="4" className={``}>
+            firman
+          </span>
+          <span className="w-9"></span>
+          <span gaya-fade="5" className="runningtextBold">
+            syah
+          </span>
+          <span className="w-9"></span>
+        </Marquee>
+      </section>
+      <section id="about" ref={about} className="relative h-full">
+        <article
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+          className={`items-center relative md:flex-row md:justify-start md:gap-4 ${styles.about}`}>
+          <About />
+        </article>
+      </section>
+      <section className={clsx(`mx-auto layout h-full py-20 `, isLoaded && 'fade-in-start')}>
+        <h1 gaya-fade="0">Journey</h1>
+        {/* <article className="mx-auto layout min-h-main py-20">
           <div className={styles.timeline}>
             <div className={`${styles.container} ${styles.right}`}>
               <div className={styles.titik}>♦</div>
-              <div
-                data-aos="fade-left"
-                data-aos-offset="100"
-                data-aos-easing="ease-in-sine"
-                className={styles.text}>
+              <div className={styles.text}>
                 <h2>SMKN 2 Kab.Tangerang</h2>
                 <small>2019 - 2021</small>
                 <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit.</p>
@@ -183,11 +193,7 @@ export default function Home() {
             </div>
             <div className={`${styles.container} ${styles.right} ${styles.lefts1}`}>
               <div className={styles.titik}>♦</div>
-              <div
-                data-aos="fade-left"
-                data-aos-offset="100"
-                data-aos-easing="ease-in-sine"
-                className={styles.text}>
+              <div className={styles.text}>
                 <h2>Self Taught</h2>
                 <small>2021 - now</small>
                 <p>Lorem ipsum dolor sit amet. </p>
@@ -196,11 +202,7 @@ export default function Home() {
             </div>
             <div className={`${styles.container} ${styles.left} ${styles.lefts2}`}>
               <div className={styles.titik}>♦</div>
-              <div
-                data-aos="fade-right"
-                data-aos-offset="100"
-                data-aos-easing="ease-in-sine"
-                className={styles.text}>
+              <div className={styles.text}>
                 <h2>Self Taught</h2>
                 <small>2021 - now</small>
                 <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit</p>
@@ -208,16 +210,57 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={styles.tech}>
+        </article> */}
+        <article className="mt-8">
+          <ol className="relative border-l border-gray-200 dark:border-gray-700">
+            <li className="mb-10 ml-6">
+              <span
+                gaya-fade="2"
+                className="absolute flex items-center justify-center w-6 h-6 bg-sky-500 rounded-full -left-3 ring-8 ring-transparent dark:bg-sky-700"></span>
+              <h3
+                gaya-fade="4"
+                className="mb-1 text-lg  font-semibold text-gray-700 dark:text-white">
+                Self Taught
+              </h3>
+              <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                2022 - now
+              </time>
+              <p gaya-fade="5" className="text-base font-normal text-gray-500 dark:text-gray-400">
+                Most people believe that learning how to program is a <u>difficult</u> and{' '}
+                <u>time-consuming</u> task. In reality, this is not always the case. In fact, with
+                the right approach and some hard work, you can learn how to program without any
+                prior experience whatsoever.
+              </p>
+            </li>
+            <li className="ml-6">
+              <span
+                gaya-fade="2"
+                className="absolute flex items-center justify-center w-6 h-6 bg-sky-500 rounded-full -left-3 ring-8 ring-transparent dark:bg-sky-700"></span>
+              <h3
+                gaya-fade="4"
+                className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                SMKN 2 Kab. Tangerang
+              </h3>
+              <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                2019- 2022{' '}
+              </time>
+              <p gaya-fade="5" className="text-base font-normal text-gray-500 dark:text-gray-400">
+                &apos;Diburu karna mutu, Teratas karna kualitas.&apos; idk, their&apos;s moto
+              </p>
+            </li>
+          </ol>
+        </article>
+      </section>
+      <section
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        className={`layout py-20 `}>
         <Tech />
-      </div>
+      </section>
 
-      <div className={styles.porto}>
+      {/* <div className={`layout ${styles.porto}`}>
         <Porto />
-      </div>
-      <ContactForm />
+      </div> */}
     </Layout>
   );
 }
