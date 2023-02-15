@@ -9,10 +9,26 @@ export default function Accent({children, className}: AccentType) {
       className={clsx(
         className,
         'transition-colors',
-        'bg-gradient-to-tr from-primary-300/40 via-primary-300/40 to-primary-400/40',
+        'bg-gradient-to-tr from-blue-200 to-sky-500',
+        // 'from-primary-300 to-primary-400 bg-clip-text text-transparent',
         'dark:from-primary-300 dark:to-primary-400 dark:bg-clip-text dark:text-transparent'
       )}>
       {children}
     </span>
   );
 }
+
+export const Accent1 = ({children, className}: AccentType) => {
+  return (
+    <span
+      className={clsx(
+        className,
+        'transition-colors',
+        'bg-gradient-to-tr from-blue-200 to-sky-500',
+        'from-primary-300 to-primary-400 bg-clip-text text-transparent'
+        // 'dark:from-primary-300 dark:to-primary-400 dark:bg-clip-text dark:text-transparent'
+      )}>
+      {children}
+    </span>
+  );
+};
