@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React, {ReactNode} from 'react';
+import {PreloadProvider} from '../../context/PreloadContext';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
 // import Sidebar from '../Sidebar';
@@ -20,15 +21,17 @@ export default function Layout(props: LayoutProps) {
       </Head>
       {/* <Sidebar /> */}
 
-      <div>
+      <React.Fragment>
         <header>
           <Navbar />
         </header>
-        <main>{children}</main>
+        <PreloadProvider>
+          <main>{children}</main>
+        </PreloadProvider>
         <footer>
           <Footer />
         </footer>
-      </div>
+      </React.Fragment>
     </>
   );
 }
