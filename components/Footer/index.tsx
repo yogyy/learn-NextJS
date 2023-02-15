@@ -1,5 +1,6 @@
 import {useRouter} from 'next/router';
 import React, {useState} from 'react';
+import CustomLink from '../links/CustomLink';
 import {LogoLink} from '../links/LogoName';
 import UnstyledLink from '../links/UnstyledLink';
 import ContactForm from '../Porto/contact';
@@ -65,9 +66,8 @@ export default function Footer() {
   }
   return (
     <>
-      <footer className="p-4 layout bg-white sm:p-6 dark:bg-gray-900">
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-
+      <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <footer className="py-4 layout bg-white  dark:bg-gray-900">
         <div className="md:flex md:justify-between">
           <div className="mb-6">
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
@@ -77,7 +77,8 @@ export default function Footer() {
         </div>
         <div className="flex flex-col-reverse justify-center place-items-center gap-6 md:flex-row md:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2023 Constantine . got any feedback?.
+            © 2023 Constantine .{' '}
+            <CustomLink href="https://www.github.com/yogyy">got any feedback?.</CustomLink>
           </span>
           <div className="relative flex text-center space-x-3 md:space-x-6 sm:place-content-center ">
             <button onClick={handleClick}>
