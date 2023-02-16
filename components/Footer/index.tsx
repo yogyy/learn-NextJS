@@ -65,9 +65,9 @@ export default function Footer() {
     setShowModal(!showModal);
   }
   return (
-    <>
+    <div className="bg-white  dark:bg-gray-900">
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <footer className="py-4 layout bg-white  dark:bg-gray-900">
+      <div className="py-4 layout ">
         <div className="md:flex md:justify-between">
           <div className="mb-6">
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
@@ -105,9 +105,9 @@ export default function Footer() {
             </div>
           </div>
         )}
-      </footer>
+      </div>
       <div className="h-2 bg-gradient-to-tr from-sky-300 via-sky-500 to-sky-700" />
-    </>
+    </div>
   );
 }
 

@@ -26,7 +26,7 @@ export default function Layout(props: LayoutProps) {
           <Navbar />
         </header>
         <PreloadProvider>
-          <main>{children}</main>
+          <main className="">{children}</main>
         </PreloadProvider>
         <footer>
           <Footer />

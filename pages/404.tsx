@@ -20,13 +20,16 @@ export default function Custom404() {
         <title>404 Not Found</title>
         <meta name="description" content="website NextJS Basic" />
       </Head>
-      <div className="h-screen flex flex-col items-center justify-center">
-        <Link href="/">
-          <h1 className="text-9xl">
-            <Accent1>404</Accent1>
-          </h1>
-        </Link>
-        <p className="text-xl text text-red-500">This page could not be found.</p>
+      <div className="bg-black">
+        <div className="relative h-screen -top-16 flex flex-col items-center justify-center">
+          <Link href="/">
+            <h1 className="text-6xl xl:text-9xl drop-shadow-glow animate-flicker">
+              <Accent1>404</Accent1>
+            </h1>
+          </Link>
+          <p className="text-xl text text-red-500">Page not found.</p>
+          <span>auto redirect, wait...</span>
+        </div>
       </div>
     </>
   );
