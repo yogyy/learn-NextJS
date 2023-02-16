@@ -8,5 +8,8 @@
   "css.validate": false,
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  } // optional but recommended
+  }, // optional but recommended
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }
