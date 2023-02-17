@@ -24,7 +24,7 @@ export default function Home() {
       duration: 700,
     });
     window.scrollTo(0, Number(localStorage.getItem('scrollPos')) || 0);
-    // return window.scrollTo({top: 0, behavior: 'smooth'});
+    return window.scrollTo({top: 0, behavior: 'smooth'});
   }, []);
   useEffect(() => {
     // Save scroll position on beforeunload event
@@ -124,6 +124,28 @@ export default function Home() {
               )}>
               {/* <SiGithub className="shrink-0" /> */}
               <span>constantine</span>
+            </UnstyledLink>
+            <UnstyledLink
+              href="/users"
+              className={clsx(
+                'inline-flex items-center gap-1 text-sm font-medium md:text-base',
+                'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
+                'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
+                'transition-colors'
+              )}>
+              {/* <SiGithub className="shrink-0" /> */}
+              <span>user</span>
+            </UnstyledLink>
+            <UnstyledLink
+              href="/posts"
+              className={clsx(
+                'inline-flex items-center gap-1 text-sm font-medium md:text-base',
+                'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
+                'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
+                'transition-colors'
+              )}>
+              {/* <SiGithub className="shrink-0" /> */}
+              <span>post</span>
             </UnstyledLink>
           </div>
         </article>
