@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-
 import UnstyledLink, {UnstyledLinkProps} from './UnstyledLink';
 
 enum ButtonVariant {

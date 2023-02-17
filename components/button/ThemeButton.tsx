@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 
 const ThemeButton = () => {
   const [theme, setTheme] = useState(null || String);
