@@ -6,6 +6,7 @@ import AOS from 'aos';
 import clsx from 'clsx';
 import useLoaded from './hooks/useLoaded';
 import {TechStack} from '../components/Porto/tech';
+import {Accent1} from '../components/links/Accent';
 
 export default function AboutPage() {
   const isLoaded = useLoaded();
@@ -22,9 +23,10 @@ export default function AboutPage() {
         <About />
         <section>
           <div className={clsx('layout py-6', isLoaded && 'fade-in-start')}>
-            <h2 gaya-fade="7">Contact</h2>
             <article gaya-fade="8" className="">
-              <h3 className="mt-12 mb-12">Current Favorite Tech Stack</h3>
+              <h3 className="mt-12 mb-12">
+                <Accent1>Current Favorite Tech Stack</Accent1>
+              </h3>
               <figure className="mt-2 mb-5 h-20">
                 <TechStack />
               </figure>
@@ -50,7 +52,7 @@ export const About = () => {
   return (
     <section className={clsx('layout py-5 ', isLoaded && 'fade-in-start')}>
       <h2 gaya-fade="1" className="text-2xl md:text-4xl 2xl:text-3xl">
-        About
+        <Accent1>About</Accent1>
       </h2>
       <h1 className="font-bold mt-1 text-2xl md:text-4xl 2xl:text-2xl" gaya-fade="2">
         me
