@@ -49,7 +49,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={` bg-white dark:bg-gray-900 font-bold w-full fixed block z-10 ${
+      className={`bg-white transition-colors dark:bg-gray-900 font-bold w-full fixed block z-10 ${
         scrolled ? 'shadow-md' : ''
       } `}>
       <div className="h-2 bg-gradient-to-tr from-sky-300 via-sky-500 to-sky-700" />
@@ -72,7 +72,7 @@ export default function Navbar() {
         </p>
         <ul className="flex ml-9 gap-9 ">
           {links.map((link) => (
-            <li key={link.href}>
+            <li className="hidden sm:block" key={link.href}>
               <NavbarLink href={link.href} label={link.label} />
             </li>
           ))}
