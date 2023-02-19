@@ -17,7 +17,7 @@ export default function Layout(props: LayoutProps) {
     <>
       <Head>
         <title>{`${pageTitle}`}</title>
-        <meta name="description" content="website NextJS Basic" />
+        <meta name="description" content="Website NextJS Basic" />
       </Head>
       {/* <Sidebar /> */}
 
@@ -26,7 +26,7 @@ export default function Layout(props: LayoutProps) {
           <Navbar />
         </header>
         <PreloadProvider>
-          <main className="">{children}</main>
+          <main>{children}</main>
         </PreloadProvider>
         <footer>
           <Footer />
