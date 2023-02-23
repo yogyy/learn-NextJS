@@ -1,8 +1,6 @@
-'use client';
-
 import {useRouter} from 'next/router';
 import Layout from '../../components/Layout';
-import styles from '../../styles/Users.module.css';
+import Loading from '../../components/loading';
 
 interface User {
   id: number;
@@ -21,17 +19,22 @@ export default function UserDetail(props: UserDetailProps) {
 
   if (router.isFallback) {
     return (
-      <div className={styles.loadingcontainer}>
-        <p className={styles.loadinp}>Loading...</p>
-      </div>
+      <>
+        <Loading />
+      </>
     );
   }
 
   return (
     <Layout pageTitle={`${user.name}`}>
-      <div className={styles.useridcontent}>
-        <div className={styles.div}>
-          <div className={styles.card}>
+      <div className="layout py-28">
+        <button
+          className="bg-blue-200 dark:bg-blue-900 font-semibold px-2 py-1 rounded-md"
+          onClick={() => router.back()}>
+          back
+        </button>
+        <div className="h-full w-1/3 p-5 mt-5 rounded-md bg-blue-200 dark:bg-blue-900">
+          <div className="flex flex-col gap-3 font-semibold">
             <p>{user.name}</p>
             <p>{user.email}</p>
             <p>{user.phone}</p>

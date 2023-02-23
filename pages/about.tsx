@@ -2,7 +2,6 @@ import pic from '../public/me.webp';
 import Image from 'next/image';
 import * as React from 'react';
 import Layout from '../components/Layout';
-import AOS from 'aos';
 import clsx from 'clsx';
 import useLoaded from './hooks/useLoaded';
 import {TechStack} from '../components/Porto/tech';
@@ -10,13 +9,6 @@ import {Accent1} from '../components/links/Accent';
 
 export default function AboutPage() {
   const isLoaded = useLoaded();
-
-  React.useEffect(() => {
-    AOS.init({
-      once: false,
-      duration: 1200,
-    });
-  }, []);
   return (
     <Layout pageTitle={'About'}>
       <main className="h-full py-20">
@@ -42,10 +34,7 @@ export default function AboutPage() {
     </Layout>
   );
 }
-// className={clsx(
-//   'h-screen dark:bg-zinc-900 flex flex-col justify-center',
-//   isLoaded && 'fade-in-start'
-// )}>
+
 export const About = () => {
   const isLoaded = useLoaded();
 

@@ -1,7 +1,5 @@
-// import Link from "next/link";
 import {useRouter} from 'next/router';
 import Layout from '../../components/Layout';
-import styles from '../../styles/Users.module.css';
 
 interface UserProps {
   dataUsers: Array<any>;
@@ -13,20 +11,20 @@ export default function Users(props: UserProps) {
 
   return (
     <Layout pageTitle={`Users List Page`}>
-      <div className={styles.div}>
-        {dataUsers.map((user) => (
-          // return (
-          <div
-            className={styles.card}
-            key={user.id}
-            onClick={() => router.push(`/users/${user.id}`)}>
-            {/* <Link href={`users/${user.id}`}> */}
-            <p>{user.name}</p>
-            <p>{user.email}</p>
-            {/* </Link> */}
-          </div>
-          // );
-        ))}
+      <div className="layout pt-28">
+        <div className="flex flex-col gap-5 font-serif ">
+          {dataUsers.map((user) => (
+            <div className="flex flex-row gap-5 min-w-max" key={user.id}>
+              <div
+                className="hover:text-sky-500 cursor-pointer"
+                onClick={() => router.push(`/users/${user.id}`)}>
+                <p>name: {user.name}</p>
+                <p>email: {user.email}</p>
+                <hr />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </Layout>
   );
