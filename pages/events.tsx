@@ -35,12 +35,16 @@ export default function EventList({eventList}: EventListProps) {
       <div className="layout pt-28 min-h-screen flex flex-col md:flex-row gap-3 relative">
         <div className="flex-grow-0 w-1/3 items-center md:justify-center flex md:h-56">
           <div className="w-28 flex flex-row md:flex-col relative gap-5 font-semibold">
-            <button className='text-start' onClick={fetchAllEvents}>All</button>
-            <button className='text-start' onClick={fetchSportEvent}>Sport</button>
+            <button className="text-start" onClick={fetchAllEvents}>
+              All
+            </button>
+            <button className="text-start" onClick={fetchSportEvent}>
+              Sport
+            </button>
           </div>
         </div>
         <div className="flex-1">
-          <h1>
+          <h1 className="text-2xl">
             <Accent1>List of Event</Accent1>
           </h1>
           {events.map((event: EventProps) => {
