@@ -1,3 +1,4 @@
+import {Menu, Transition} from '@headlessui/react';
 import clsx from 'clsx';
 import {useTheme} from 'next-themes';
 import React from 'react';
@@ -28,6 +29,43 @@ export default function ThemeButton() {
         </li>
       </ul> */}
     </div>
+  );
+}
+
+export function ThemeButtonHeadless() {
+  const {setTheme} = useTheme();
+  const themes = [
+    {name: 'Light', value: 'light'},
+    {name: 'Dark', value: 'dark'},
+    {name: 'System', value: 'system'},
+  ];
+  return (
+    <Menu as="div" className="relative">
+      <Menu.Button className="w-full text-left pl-5 py-2">Theme?</Menu.Button>
+      <Transition
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0">
+        <Menu.Items className="absolute w-1/2 min-w-[80px] bg-white dark:bg-gray-900 -right-[1px] xl:-right-[152px] xl:-top-[9px] rounded-md py-2 bg-transparent border border-sky-300 dark:border-sky-700 focus:outline-none">
+          {themes.map((theme) => (
+            <Menu.Item
+              key={theme.value}
+              as="div"
+              className=""
+              onClick={() => setTheme(theme.value)}>
+              {({active}) => (
+                <div className={`pl-5 p-2 cursor-pointer ${active ? 'bg-blue-500' : ''}`}>
+                  {theme.name}
+                </div>
+              )}
+            </Menu.Item>
+          ))}
+        </Menu.Items>
+      </Transition>
+    </Menu>
   );
 }
 
