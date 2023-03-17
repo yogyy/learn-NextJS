@@ -1,7 +1,7 @@
 import {Menu, Transition} from '@headlessui/react';
 import clsx from 'clsx';
 import {useTheme} from 'next-themes';
-import React from 'react';
+import * as React from 'react';
 
 type ThemeButtonProps = React.ComponentPropsWithoutRef<'button'>;
 
@@ -72,6 +72,9 @@ export function ThemeButtonHeadless() {
 // still has error when refresh on light
 export function ThemeButtonOld({className, ...rest}: ThemeButtonProps) {
   const {theme, setTheme} = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
+
   return (
     <button
       className={clsx(
@@ -84,7 +87,7 @@ export function ThemeButtonOld({className, ...rest}: ThemeButtonProps) {
       )}
       {...rest}
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-      {theme === 'light' ? <Moon /> : <Sun />}
+      {mounted && theme === 'light' ? <Moon /> : <Sun />}
     </button>
   );
 }

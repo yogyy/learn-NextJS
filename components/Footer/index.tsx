@@ -65,7 +65,7 @@ export default function Footer() {
     setShowModal(!showModal);
   }
   return (
-    <div className="bg-white transition-colors dark:bg-gray-900">
+    <div className="bg-gray-100/25 transition-colors dark:bg-gray-900/5">
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="py-4 layout ">
         <div className="md:flex md:justify-between">
@@ -75,6 +75,7 @@ export default function Footer() {
             </span>
           </div>
         </div>
+        {/* /taai */}
         <div className="flex flex-col-reverse justify-center place-items-center gap-6 md:flex-row md:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2023 Constantine .{' '}
@@ -106,7 +107,6 @@ export default function Footer() {
           </div>
         )}
       </div>
-      <div className="h-2 bg-gradient-to-tr from-sky-300 via-sky-500 to-sky-700" />
     </div>
   );
 }

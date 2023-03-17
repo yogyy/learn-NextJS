@@ -1,10 +1,10 @@
 import clsx from 'clsx';
-import {useSession} from 'next-auth/react';
+import {signOut, useSession} from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import {ThemeButtonHeadless} from '../button/ThemeButton';
+import {ThemeButtonHeadless, ThemeButtonOld} from '../button/ThemeButton';
 // import {LogoLink} from '../links/LogoName';
 import UnstyledLink from '../links/UnstyledLink';
 import {Menu, Transition} from '@headlessui/react';
@@ -18,6 +18,13 @@ export default function Navbar() {
   const arrOfRoute = router.route.split('/');
   const baseRoute = '/' + arrOfRoute[1];
 
+  const handleLogout = () => {
+    signOut();
+  };
+  const handleLogin = () => {
+    window.open('/auth/signin', '_blank');
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.pageYOffset === 0);
@@ -30,10 +37,11 @@ export default function Navbar() {
 
   return (
     <div
-      className={`bg-white transition-colors dark:bg-gray-900 font-bold w-full fixed block z-10 ${
-        !scrolled ? 'shadow-md' : ''
+      className={`font-bold w-full fixed block z-10 ${
+        !scrolled
+          ? 'bg-gradient-to-br from-gray-50 to-sky-50 transition-colors dark:bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-gray-900 dark:to-black'
+          : ''
       } `}>
-      <div className="h-2 bg-gradient-to-tr from-sky-300 via-sky-500 to-sky-700" />
       <nav
         className={clsx(
           `layout sticky top-0 z-50 transition-shadow flex py-4 items-center min-w-[200px]`
@@ -68,20 +76,42 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        <ThemeButtonOld />
         <Menu as="div" className="relative ml-4 ">
-          <Menu.Button className="flex focus-within::border-sky-600">
-            {session ? (
+          <Menu.Button className="flex focus:outline-none">
+            <Image
+              src={
+                session
+                  ? session.user?.image ?? ''
+                  : 'https://www.svgrepo.com/show/496485/profile-circle.svg'
+              }
+              alt={session ? session.user?.name ?? '' : 'not login'}
+              width={36}
+              height={36}
+              className="rounded-full active:scale-95 outline active:outline-sky-300 active:outline-1 bg-slate-300 dark:bg-slate-500"
+              priority
+              draggable={false}
+            />
+            {/* {session ? (
               <Image
                 src={session?.user?.image || ''}
-                alt={'you'}
+                alt={session?.user?.name || ''}
                 width={36}
                 height={36}
-                className="rounded-full"
+                className="rounded-full active:scale-95 outline active:outline-sky-300 active:outline-1 "
                 priority
+                onMouseDown={(e) => e.preventDefault()}
               />
             ) : (
-              'login'
-            )}
+              <Image
+                // className="bg-white rounded-full dark:bg-gray-800"
+                src="https://www.svgrepo.com/show/496485/profile-circle.svg"
+                alt="no login"
+                width={40}
+                height={40}
+                onMouseDown={(e) => e.preventDefault()}
+              />
+            )} */}
           </Menu.Button>
           <Transition
             enter="transition-opacity duration-300"
@@ -90,10 +120,14 @@ export default function Navbar() {
             leave="transition-opacity duration-300"
             leaveFrom="opacity-100"
             leaveTo="opacity-0">
-            <Menu.Items className="absolute flex right-0 flex-col w-[60vw] min-w-[200px] text-sm border bg-white dark:bg-gray-900 border-sky-300 dark:border-sky-700 mt-2 rounded-md py-2 focus:outline-none">
+            <Menu.Items
+              className={clsx(
+                'absolute flex right-0 flex-col w-[60vw] sm:w-[300px] text-sm border  mt-2 rounded-md py-2 focus:outline-none',
+                'bg-white dark:bg-gray-900 border-sky-300 dark:border-sky-700'
+              )}>
               <Menu.Item>
                 {({active}) => (
-                  <Link className={`pl-5 py-2 ${active && 'bg-blue-500'}`} href="/">
+                  <Link className={`pl-5 py-2 ${active && 'bg-blue-500'}`} href="/hellox">
                     Account settings
                   </Link>
                 )}
@@ -109,7 +143,8 @@ export default function Navbar() {
                 {({active}) => (
                   <Link
                     // href={(!session && '/api/auth/signin') || (session && '/api/auth/signout')}
-                    href={!session ? '/api/auth/signin' : '/api/auth/signout'}
+                    href=""
+                    onClick={session ? handleLogout : handleLogin}
                     className={`py-2 pl-5 ${active && 'bg-blue-500'}`}>
                     {!session && <span className="">Login</span>}
                     {session && <span className="">LogOut</span>}

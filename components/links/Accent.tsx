@@ -24,8 +24,7 @@ export const Accent1 = ({children, className}: AccentType) => {
       className={clsx(
         className,
         'transition-colors',
-        'bg-gradient-to-tr from-blue-200 to-sky-500',
-        'from-primary-300 to-primary-400 bg-clip-text text-transparent'
+        'text-transparent bg-clip-text bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-blue-500 via-green-700 to-gray-300 scroll-smooth'
         // 'dark:from-primary-300 dark:to-primary-400 dark:bg-clip-text dark:text-transparent'
       )}>
       {children}

@@ -22,7 +22,6 @@ export default function AboutPage() {
               <figure className="mt-2 mb-5 h-20">
                 <TechStack />
               </figure>
-
               <p>
                 Do contact me if you need my opinion about web development, especially frontend
                 works. I’ll be happy to help! (find my email in the footer)
@@ -58,9 +57,9 @@ export const About = () => {
             borderRadius: '5%',
             display: 'flex',
           }}
+          draggable={false}
         />
       </div>
-
       <article className="max-w-5xl mt-4  md:mt-6 md:text-lg 2xl:text-xl ">
         <p gaya-fade="5" className="mb-4 leading-6">
           Hello, my name is yogi. i started programming in early high school, which is the start of

@@ -3,7 +3,6 @@ import styles from '../styles/Home.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {useEffect, useRef} from 'react';
-// import {Porto} from '../components/Porto/porto';
 import Typewriter from 'typewriter-effect';
 import {Tech} from '../components/Porto/tech';
 import clsx from 'clsx';
@@ -13,6 +12,10 @@ import {About} from './about';
 import useLoaded from './hooks/useLoaded';
 import Marquee from 'react-fast-marquee';
 import {LogoLink} from '../components/links/LogoName';
+import {ThemeButtonOld} from '../components/button/ThemeButton';
+import {Accent1} from '../components/links/Accent';
+import IonIcons from '../components/IonIcons';
+import YG from '../components/YG';
 
 export default function Home() {
   const isLoaded = useLoaded();
@@ -20,28 +23,27 @@ export default function Home() {
   useEffect(() => {
     AOS.init({
       // disable: true,
-      once: false,
+      once: true,
       duration: 700,
     });
-    window.scrollTo(0, Number(localStorage.getItem('scrollPos')) || 0);
-    return window.scrollTo({top: 0, behavior: 'smooth'});
+    // window.scrollTo(0, Number(localStorage.getItem('scrollPos')) || 0);
   }, []);
-  useEffect(() => {
-    // Save scroll position on beforeunload event
-    const saveScrollPos = (): void => {
-      localStorage.setItem('scrollPos', String(window.pageYOffset));
-    };
-    window.addEventListener('beforeunload', saveScrollPos);
+  // useEffect(() => {
+  //   // Save scroll position on beforeunload event
+  //   const saveScrollPos = (): void => {
+  //     localStorage.setItem('scrollPos', String(window.pageYOffset));
+  //   };
+  //   window.addEventListener('beforeunload', saveScrollPos);
 
-    return () => {
-      window.removeEventListener('beforeunload', saveScrollPos);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('beforeunload', saveScrollPos);
+  //   };
+  // }, []);
 
   return (
-    <Layout pageTitle={'yogyy'}>
+    <Layout pageTitle={'yogyy - Portofolio'}>
       <section
-        className={clsx('h-screen flex flex-col justify-center', isLoaded && 'fade-in-start')}>
+        className={clsx(' h-screen flex flex-col justify-center', isLoaded && 'fade-in-start')}>
         <article className={`mx-auto layout -mt-14 ${styles.intro}`}>
           <div className={`${styles.bungkusH1}`}>
             <h1 gaya-fade="1">
@@ -74,16 +76,19 @@ export default function Home() {
             amet consectetur adipisicing elit. Eveniet.
           </p>
           <div gaya-fade="6" className="mt-8 flex flex-wrap gap-4 md:!text-lg">
+            <ThemeButtonOld />
             <div className="group relative">
               <div
                 className={clsx(
-                  'absolute -inset-0.5 animate-tilt rounded blur',
-                  'bg-gradient-to-r from-primary-300 to-primary-400',
-                  'dark:from-primary-200 dark:via-primary-300',
-                  'opacity-75 transition duration-1000 group-hover:opacity-100 group-hover:duration-200'
+                  'absolute -inset-1 animate-tilt rounded blur',
+                  // 'bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-blue-500 via-green-700 to-gray-300',
+                  // 'dark:from-sky-200 dark:via-sky-300',
+                  'opacity-70 transition duration-1000 group-hover:opacity-100 group-hover:duration-200'
                 )}
               />
-              <ButtonLink href="#about">Read the blog</ButtonLink>
+              <ButtonLink href="#about">
+                <Accent1>Read the blog</Accent1>
+              </ButtonLink>
             </div>
             <ButtonLink href="/about">Learn more about me</ButtonLink>
           </div>
@@ -93,25 +98,34 @@ export default function Home() {
             data-aos-delay="700"
             className="mt-4 flex flex-wrap gap-4 gap-y-2 md:mt-8">
             <UnstyledLink
-              href="/"
+              href="/hellox"
               className={clsx(
                 'inline-flex items-center gap-1 text-sm font-medium md:text-base',
                 'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
                 'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
                 'transition-colors'
               )}>
-              {/* <IoNewspaperSharp className="shrink-0" /> */}
+              <IonIcons name="newspaper" />
               <span>Resume</span>
             </UnstyledLink>
             <UnstyledLink
-              href="https://twitter.com/yogyy"
+              href="https://twitter.com/yogyxx"
               className={clsx(
                 'inline-flex items-center gap-1 text-sm font-medium md:text-base',
                 'group text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
                 'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
                 'transition-colors'
               )}>
-              {/* <SiTwitter className="shrink-0 transition-colors group-hover:text-[#1da1f2]" /> */}
+              <span className="shrink-0 transition-colorsflex group-hover:text-[#1da1f2]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4 "
+                  viewBox="0 0 512 512"
+                  fill="currentColor">
+                  <title>Logo Twitter</title>
+                  <path d="M496 109.5a201.8 201.8 0 01-56.55 15.3 97.51 97.51 0 0043.33-53.6 197.74 197.74 0 01-62.56 23.5A99.14 99.14 0 00348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 002.54 22.1 280.7 280.7 0 01-203-101.3A95.69 95.69 0 0036 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0135.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 01-25.94 3.4 94.38 94.38 0 01-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0139.5 405.6a203 203 0 01-23.5-1.4A278.68 278.68 0 00166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 00496 109.5z" />
+                </svg>
+              </span>
               <span>@yogyy</span>
             </UnstyledLink>
             <UnstyledLink
@@ -122,34 +136,20 @@ export default function Home() {
                 'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
                 'transition-colors'
               )}>
-              {/* <SiGithub className="shrink-0" /> */}
-              <span>constantine</span>
-            </UnstyledLink>
-            <UnstyledLink
-              href="/users"
-              className={clsx(
-                'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
-                'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
-                'transition-colors'
-              )}>
-              {/* <SiGithub className="shrink-0" /> */}
-              <span>user</span>
-            </UnstyledLink>
-            <UnstyledLink
-              href="/posts"
-              className={clsx(
-                'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
-                'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
-                'transition-colors'
-              )}>
-              {/* <SiGithub className="shrink-0" /> */}
-              <span>post</span>
+              <IonIcons name="logo-github" />
+              <span>Constantine</span>
             </UnstyledLink>
           </div>
         </article>
       </section>
+      <YG
+        className={clsx(
+          'absolute bottom-0 right-6',
+          'translate-y-[37%] transform-gpu',
+          'w-[calc(100%-3rem)] md:w-[600px] 2xl:w-[900px]',
+          'z-[-1] opacity-70 dark:opacity-40'
+        )}
+      />
       <section>
         <Marquee
           className={clsx(
@@ -159,35 +159,35 @@ export default function Home() {
           style={{top: '100px'}}
           gradient={false}>
           <span gaya-fade="4" className={``}>
-            Muhammad
+            Batman
           </span>
           <span className="w-9"></span>
           <span gaya-fade="5" className="runningtextBold">
-            yogi
+            The Joker
           </span>
           <span className="w-9"></span>
           <span gaya-fade="4" className={``}>
-            firman
+            The Penguin
           </span>
           <span className="w-9"></span>
           <span gaya-fade="5" className="runningtextBold">
-            syah
+            Nightwing
           </span>
           <span className="w-9"></span>
           <span gaya-fade="4" className={``}>
-            Muhammad
+            Riddler
           </span>
           <span className="w-9"></span>
           <span gaya-fade="5" className="runningtextBold">
-            yogi
+            Bane
           </span>
           <span className="w-9"></span>
           <span gaya-fade="4" className={``}>
-            firman
+            Harley Quinn
           </span>
           <span className="w-9"></span>
           <span gaya-fade="5" className="runningtextBold">
-            syah
+            Mister Freeze
           </span>
           <span className="w-9"></span>
         </Marquee>
@@ -202,37 +202,6 @@ export default function Home() {
       </section>
       <section className={clsx(`mx-auto layout h-full py-20 `, isLoaded && 'fade-in-start')}>
         <h1 gaya-fade="0">Journey</h1>
-        {/* <article className="mx-auto layout min-h-main py-20">
-          <div className={styles.timeline}>
-            <div className={`${styles.container} ${styles.right}`}>
-              <div className={styles.titik}>♦</div>
-              <div className={styles.text}>
-                <h2>SMKN 2 Kab.Tangerang</h2>
-                <small>2019 - 2021</small>
-                <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit.</p>
-                <span className={styles.rightArrow}></span>
-              </div>
-            </div>
-            <div className={`${styles.container} ${styles.right} ${styles.lefts1}`}>
-              <div className={styles.titik}>♦</div>
-              <div className={styles.text}>
-                <h2>Self Taught</h2>
-                <small>2021 - now</small>
-                <p>Lorem ipsum dolor sit amet. </p>
-                <span className={styles.rightArrow}></span>
-              </div>
-            </div>
-            <div className={`${styles.container} ${styles.left} ${styles.lefts2}`}>
-              <div className={styles.titik}>♦</div>
-              <div className={styles.text}>
-                <h2>Self Taught</h2>
-                <small>2021 - now</small>
-                <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit</p>
-                <span className={styles.leftArrow}></span>
-              </div>
-            </div>
-          </div>
-        </article> */}
         <article className="mt-8">
           <ol className="relative border-l border-gray-200 dark:border-gray-700">
             <li className="mb-10 ml-6">
