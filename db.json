@@ -1,0 +1,132 @@
+{
+  "dashboard": {
+    "posts": 6,
+    "likes": 155,
+    "follower": 35,
+    "following": 51
+  },
+  "news": [
+    {
+      "id": 1,
+      "title": "berita pertama",
+      "description": "desc 1",
+      "category": "sports"
+    },
+    {
+      "id": 2,
+      "title": "berita kedua",
+      "description": "desc 2",
+      "category": "polite"
+    },
+    {
+      "id": 3,
+      "title": "berita ketiga",
+      "description": "desc 3",
+      "category": "sports"
+    },
+    {
+      "id": 4,
+      "title": "berita keempat",
+      "description": "desc 4",
+      "category": "sports"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "product 1",
+      "price": 12000,
+      "description": "desc product1"
+    },
+    {
+      "id": 2,
+      "title": "product 2",
+      "price": 1388,
+      "description": "desc product2"
+    },
+    {
+      "id": 3,
+      "title": "product 3",
+      "price": 3100,
+      "description": "desc product3"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "event 1",
+      "description": "desc 1",
+      "category": "sports",
+      "date": "April 25"
+    },
+    {
+      "id": 2,
+      "title": "event 2",
+      "description": "desc 2",
+      "category": "sports",
+      "date": "May 25"
+    },
+    {
+      "id": 3,
+      "title": "event 3",
+      "description": "desc 3",
+      "category": "technology",
+      "date": "October 25"
+    },
+    {
+      "id": 4,
+      "title": "event 4",
+      "description": "desc 4",
+      "category": "food",
+      "date": "April 25"
+    },
+    {
+      "id": 5,
+      "title": "event 5",
+      "description": "desc 5",
+      "category": "sports",
+      "date": "April 25"
+    },
+    {
+      "id": 6,
+      "title": "event 6",
+      "description": "desc 6",
+      "category": "food",
+      "date": "April 25"
+    },
+    {
+      "id": 7,
+      "title": "event 7",
+      "description": "desc 7",
+      "category": "technology",
+      "date": "Jan 11"
+    },
+    {
+      "id": 8,
+      "title": "event 8",
+      "description": "desc 8",
+      "category": "technology",
+      "date": "Feb 31"
+    },
+    {
+      "id": 9,
+      "title": "event 9",
+      "description": "desc 9",
+      "category": "food",
+      "date": "April 25"
+    },
+    {
+      "id": 10,
+      "title": "event 10",
+      "description": "desc 10",
+      "category": "sports",
+      "date": "Desember 33"
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    }
+  ]
+}
