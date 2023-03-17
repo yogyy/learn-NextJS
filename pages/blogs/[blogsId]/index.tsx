@@ -17,7 +17,7 @@ export default function UserDetail(props: UserDetailProps) {
   const {blog} = props;
 
   return (
-    <Layout pageTitle={`blog post - ${blog.title}`}>
+    <Layout pageTitle={`blog post - ${!router.isFallback && blog.title}`}>
       <div className="layout py-28">
         <button
           type="button"
@@ -68,13 +68,10 @@ export async function getStaticProps(context: GetStaticProps) {
   const blog = await res.json();
 
   if (!blog.id) {
-    console.error(`No blog found for ID ${blogsId}`, blog);
     return {
       notFound: true,
     };
   }
-
-  console.log('Blog data:', blog);
 
   return {
     props: {
