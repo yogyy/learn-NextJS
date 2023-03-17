@@ -52,7 +52,7 @@ interface GetStaticProps {
 
 export async function getStaticProps(context: GetStaticProps) {
   const {productId} = context.params;
-  const res = await fetch(`http://localhost:9999/products/${productId}`);
+  const res = await fetch(`https://json-server-seven-flax.vercel.app/products/${productId}`);
   const data = await res.json();
 
   if (!data.id) {

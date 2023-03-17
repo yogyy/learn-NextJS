@@ -22,7 +22,7 @@ export default function ProductList({products}: ProductDetailProps) {
               <div className="mt-5" key={product.id}>
                 <Link href={`product/${product.id}`}>
                   {product.id} {product.title} price:{product.price}
-                </Link>{' '}
+                </Link>
                 <br />
                 {product.description}
               </div>
@@ -36,7 +36,7 @@ export default function ProductList({products}: ProductDetailProps) {
 
 export async function getStaticProps() {
   console.log('generating / regenerating productlist');
-  const res = await fetch('http://localhost:9999/products');
+  const res = await fetch('https://json-server-seven-flax.vercel.app/products');
   const data = await res.json();
 
   return {

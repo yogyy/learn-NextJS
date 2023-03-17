@@ -19,7 +19,7 @@ export default function EventList({eventList}: EventListProps) {
   const [events, setEvents] = useState(eventList);
   const router = useRouter();
   const fetchSportEvent = async () => {
-    const res = await fetch(`http://localhost:9999/events?category=sports`);
+    const res = await fetch(`https://json-server-seven-flax.vercel.app/events?category=sports`);
     const data = await res.json();
     setEvents(data);
     router.push('/events?category=sports', undefined, {shallow: true});
@@ -72,7 +72,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const {category} = query;
 
   const queryString = category ? `category=${category}` : null;
-  const res = await fetch(`http://localhost:9999/events?${queryString}`);
+  const res = await fetch(`https://json-server-seven-flax.vercel.app/events?${queryString}`);
   const data = await res.json();
 
   console.log(data);

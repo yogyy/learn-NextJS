@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 
 const fetcher = async () => {
-  const res = await fetch('http://localhost:9999/dashboard');
+  const res = await fetch('https://json-server-seven-flax.vercel.app/dashboard');
   const data = await res.json();
   return data;
 };

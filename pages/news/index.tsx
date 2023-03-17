@@ -23,7 +23,7 @@ export default function NewsArticleList({beritaa}: any) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:9999/news');
+  const res = await fetch('https://json-server-seven-flax.vercel.app/news');
   const data = await res.json();
 
   return {

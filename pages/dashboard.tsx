@@ -22,7 +22,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function fetchDashboardData() {
-      const res = await fetch('http://localhost:9999/dashboard');
+      const res = await fetch('https://json-server-seven-flax.vercel.app/dashboard');
       const data = await res.json();
       setDashboardData(data);
       setIsLoading(false);
