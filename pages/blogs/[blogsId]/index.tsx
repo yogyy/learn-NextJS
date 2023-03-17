@@ -16,14 +16,6 @@ export default function UserDetail(props: UserDetailProps) {
   const router = useRouter();
   const {blog} = props;
 
-  // if (router.isFallback) {
-  //   return (
-  //     <>
-  //       <Loading />
-  //     </>
-  //   );
-  // }
-
   return (
     <Layout pageTitle={`blog post - ${blog.title}`}>
       <div className="layout py-28">
@@ -76,10 +68,13 @@ export async function getStaticProps(context: GetStaticProps) {
   const blog = await res.json();
 
   if (!blog.id) {
+    console.error(`No blog found for ID ${blogsId}`, blog);
     return {
       notFound: true,
     };
   }
+
+  console.log('Blog data:', blog);
 
   return {
     props: {
